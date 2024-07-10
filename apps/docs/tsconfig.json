@@ -1,18 +1,37 @@
 {
-  "extends": "@repo/typescript-config/nextjs.json",
   "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es2015",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
     "plugins": [
       {
-        "name": "next"
-      }
-    ]
+        "name": "next",
+      },
+    ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "~/*": ["./*"],
+    },
   },
   "include": [
     "next-env.d.ts",
-    "next.config.js",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "src/hooks/use-mounted.ts",
+    "content/components/core/feedback/alert.mdx",
+    "content/components/core/data-display/accordion.mdx",
+    "content/components/utils/client-only.mdx",
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }
