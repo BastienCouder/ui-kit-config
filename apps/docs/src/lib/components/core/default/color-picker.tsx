@@ -8,8 +8,8 @@ import {
   type ColorSpace,
   composeRenderProps,
 } from "react-aria-components";
-import { cn } from "@/lib/utils/classes";
-import { Button, type ButtonProps } from "./button";
+import { cn } from "@/lib/utils";
+import { Button, type ButtonProps } from "./react/button";
 import { ColorArea } from "./color-area";
 import { ColorField } from "./color-field";
 import { ColorSlider } from "./color-slider";

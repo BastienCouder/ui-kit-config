@@ -2,7 +2,7 @@
 
 import React from "react";
 import { EditIcon, Trash2Icon } from "lucide-react";
-import { Button } from "@/lib/components/core/default/button";
+import { Button } from "@/lib/components/core/default/react/button";
 import { Input } from "@/lib/components/core/default/input";
 import { useList } from "@/lib/hooks/use-list";
 
@@ -17,14 +17,14 @@ export default function Demo() {
   return (
     <div>
       <div className="flex gap-2">
-        <Button isDisabled={list.length < 1} onPress={() => insertAt(1, "woo")}>
+        <Button isDisabled={list.length < 1} onClick={() => insertAt(1, "woo")}>
           Insert After First
         </Button>
-        <Button isDisabled={list.length < 2} onPress={() => removeAt(1)}>
+        <Button isDisabled={list.length < 2} onClick={() => removeAt(1)}>
           Remove Second Item
         </Button>
-        <Button onPress={() => set([1, 2, 3])}>Reset</Button>
-        <Button onPress={() => clear()}>Clear</Button>
+        <Button onClick={() => set([1, 2, 3])}>Reset</Button>
+        <Button onClick={() => clear()}>Clear</Button>
       </div>
       <div className="mt-4 space-y-2">
         <div className="flex items-center space-x-2">
@@ -34,7 +34,7 @@ export default function Demo() {
               setInputValue(e.target.value);
             }}
           />
-          <Button onPress={() => push(inputValue)}>Add</Button>
+          <Button onClick={() => push(inputValue)}>Add</Button>
         </div>
         {list.map((item, index) => (
           <div
@@ -50,7 +50,7 @@ export default function Demo() {
                 variant="quiet"
                 size="sm"
                 shape="square"
-                onPress={() => {
+                onClick={() => {
                   removeAt(index);
                 }}
               >

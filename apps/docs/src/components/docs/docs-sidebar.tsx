@@ -9,7 +9,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/lib/components/core/default/collapsible";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 import type { Category as TCategory, DocsNav } from "@/types/docs-nav";
 
 export interface DocsSidebarProps {
@@ -54,78 +54,133 @@ const Category = ({ title, slug, items, pathname }: CategoryProps) => {
       <CollapsibleContent asChild className="space-y-2 pt-2">
         <ul>
           {items.map((item, index) => {
-            if ("href" in item && item.href) {
-              return (
-                <li key={index}>
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "border-bg-bg-muted hover:text-foreground group ml-2 block border-l pl-4 text-fg-muted transition-colors",
-                      {
-                        "border-border font-medium text-fg": pathname === item.href,
-                      }
-                    )}
-                  >
-                    <span className="block duration-100 group-hover:translate-x-0.5">
-                      {item.title}
-                    </span>
-                  </Link>
-                </li>
-              );
-            }
-            if ("items" in item && item.items.length > 0) {
-              return (
-                <li key={index} className="ml-2 space-y-2">
-                  <h3 className="category pl-4 font-mono text-xs tracking-widest text-fg">
-                    {item.title}
-                  </h3>
-                  <ul className="list-none">
-                    {item.items.map((subItem, subIndex) => {
-                      if (subItem.disabled) {
-                        return (
-                          <li key={subIndex}>
-                            <span
-                              className={cn(
-                                "border-muted block cursor-not-allowed border-l py-1 pl-4 text-fg-disabled"
-                              )}
-                            >
-                              {subItem.title}
-                              {subItem.label && (
-                                <span className="ml-2 rounded-md bg-bg-disabled px-1.5 py-0.5 text-xs leading-none text-fg-disabled">
-                                  {subItem.label}
-                                </span>
-                              )}
-                            </span>
-                          </li>
-                        );
-                      }
-                      return (
-                        <li key={subIndex}>
-                          <Link
-                            href={subItem.href}
+            const [subOpen, setSubOpen] = React.useState(false);
+
+            return (
+              <li key={index}>
+                {title === "Components" ? (
+                  <>
+                    {item.items && item.items.length > 0 && (
+                      <Collapsible open={subOpen} onOpenChange={setSubOpen}>
+                        {"href" in item && item.href && (
+                          <div
                             className={cn(
-                              "border-muted hover:text-foreground group block border-l py-1 pl-4 text-fg-muted transition-colors",
+                              "border-bg-bg-muted hover:text-foreground group ml-2 flex items-center gap-2 border-l pl-4 text-fg-muted transition-colors",
                               {
-                                "border-fg font-medium text-fg": pathname === subItem.href,
+                                "border-border font-medium text-fg": pathname === item.href,
                               }
                             )}
                           >
-                            <span className="block transition-transform duration-100 group-hover:translate-x-0.5">
-                              {subItem.title}
-                              {subItem.label && (
-                                <span className="ml-2 rounded-md border bg-bg-muted px-1.5 py-0.5 text-xs leading-none text-fg-muted">
-                                  {subItem.label}
-                                </span>
-                              )}
-                            </span>
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </li>
-              );
-            }
+                            <CollapsibleTrigger className="flex items-center space-x-2 [&[data-state=open]>svg]:rotate-90">
+                              <ChevronRightIcon className="h-4 w-4 shrink-0 transition-transform duration-200" />
+                              <span className="block duration-100 group-hover:translate-x-0.5">
+                                {item.title}
+                              </span>
+                            </CollapsibleTrigger>
+                          </div>
+                        )}
+                        <CollapsibleContent asChild className="ml-8 mt-2 space-y-2">
+                          <ul className="list-none">
+                            {item.items.map((subItem, subIndex) => {
+
+                              return (
+                                <li key={subIndex}>
+                                  {subItem.disabled ? (
+                                    <>
+                                      <span
+                                        className={cn(
+                                          "border-muted block cursor-not-allowed border-l py-1 pl-4 text-fg-disabled"
+                                        )}
+                                      >
+                                        {subItem.title}
+                                        {subItem.label && (
+                                          <span className="ml-2 rounded-md bg-bg-disabled px-1.5 py-0.5 text-xs leading-none text-fg-disabled">
+                                            {subItem.label}
+                                          </span>
+                                        )}
+                                      </span>
+                                    </>
+                                  ) : (
+                                    <>
+                                      <Link
+                                        href={subItem.href}
+                                        className={cn(
+                                          "border-muted hover:text-foreground group block border-l py-1 pl-4 text-fg-muted transition-colors",
+                                          {
+                                            "border-fg font-medium text-fg":
+                                              pathname === subItem.href,
+                                          }
+                                        )}
+                                      >
+                                        <span className="block transition-transform duration-100 group-hover:translate-x-0.5">
+                                          {subItem.title}
+                                          {subItem.label && (
+                                            <span className="ml-2 rounded-md border bg-bg-muted px-1.5 py-0.5 text-xs leading-none text-fg-muted">
+                                              {subItem.label}
+                                            </span>
+                                          )}
+                                        </span>
+                                      </Link>
+                                      <ul className="list-none">
+                                        {subItem.items && subItem.items.length > 0 && (
+                                          <>
+                                            {subItem.items.map((item, subIndex) => (
+                                              <li key={subIndex}>
+                                               <Link
+                                        href={item.href}
+                                        className={cn(
+                                          "border-muted hover:text-foreground group block py-1 pl-4 text-fg-disabled transition-colors",
+                                          {
+                                            "border-fg font-medium text-fg":
+                                              pathname === item.href,
+                                          }
+                                        )}
+                                      >
+                                        <span className="block transition-transform duration-100 group-hover:translate-x-0.5">
+                                          {item.title}
+                                          {item.label && (
+                                            <span className="ml-2 rounded-md border bg-bg-muted px-1.5 py-0.5 text-xs leading-none text-fg-muted">
+                                              {item.label}
+                                            </span>
+                                          )}
+                                        </span>
+                                      </Link>
+                                              </li>
+                                            ))}
+                                          </>
+                                        )}
+                                      </ul>
+                                    </>
+                                  )}
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </CollapsibleContent>
+                      </Collapsible>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    {"href" in item && (
+                      <Link
+                        href={item.href}
+                        className={cn(
+                          "border-bg-bg-muted hover:text-foreground group ml-2 block border-l pl-4 text-fg-muted transition-colors",
+                          {
+                            "border-border font-medium text-fg": pathname === item.href,
+                          }
+                        )}
+                      >
+                        <span className="block duration-100 group-hover:translate-x-0.5">
+                          {item.title}
+                        </span>
+                      </Link>
+                    )}
+                  </>
+                )}
+              </li>
+            );
           })}
         </ul>
       </CollapsibleContent>

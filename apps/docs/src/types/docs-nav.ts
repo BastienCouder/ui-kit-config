@@ -4,6 +4,7 @@ export interface Item {
   disabled?: boolean;
   external?: boolean;
   label?: string;
+  items?: Item[];
 }
 
 export interface SubCategory {

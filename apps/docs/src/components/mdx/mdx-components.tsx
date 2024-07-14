@@ -7,7 +7,7 @@ import { ComponentSource } from "@/components/component-source";
 import { DocsList, type DocsListProps } from "@/components/docs/docs-list";
 import { slugify } from "@/utils/string";
 import { Alert } from "@/lib/components/core/default/alert";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 import { Code } from "../code";
 
 export const Link = ({
@@ -150,4 +150,19 @@ export const components: React.ComponentPropsWithoutRef<typeof MDXRemote>["compo
     </div>
   ),
   Alert,
-};
+  Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
+    <Link
+      className={cn("font-medium underline underline-offset-4", className)}
+      {...props}
+    />
+  ),
+  LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
+    <Link
+      className={cn(
+        "flex w-full flex-col items-center rounded-xl border bg-card p-6 text-card-foreground shadow transition-colors hover:bg-muted/50 sm:p-10",
+        className
+      )}
+      {...props}
+    />
+  ),
+}

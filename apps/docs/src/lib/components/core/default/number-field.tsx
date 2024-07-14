@@ -8,7 +8,7 @@ import {
 import { tv, type VariantProps } from "tailwind-variants";
 import { useMediaQuery } from "@/lib/hooks/use-media-query";
 import { ChevronDownIcon, ChevronUpIcon, MinusIcon, PlusIcon } from "@/lib/icons";
-import { Button, type ButtonProps } from "./button";
+import { Button, type ButtonProps } from "./react/button";
 import { Field, type FieldProps } from "./field";
 import { InputRoot, Input, type inputStyles } from "./input";
 

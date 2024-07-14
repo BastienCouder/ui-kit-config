@@ -10,7 +10,7 @@ import {
 } from "react-aria-components";
 import { tv } from "tailwind-variants";
 import { ChevronRightIcon } from "@/lib/icons";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 
 const breadcrumbsStyles = tv({
   slots: {

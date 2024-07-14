@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useMounted } from "@/lib/hooks/use-mounted";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 
 interface Item {
   title: string;

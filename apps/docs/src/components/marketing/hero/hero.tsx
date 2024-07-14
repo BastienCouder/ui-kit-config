@@ -5,11 +5,11 @@ import { SearchDocs } from "@/components/docs/search-docs";
 import { GitHubIcon } from "@/components/icons";
 import { Avatar } from "@/lib/components/core/default/avatar";
 import { AvatarGroup } from "@/lib/components/core/default/avatar-group";
-import { Button } from "@/lib/components/core/default/button";
+import { Button } from "@/lib/components/core/default/react/button";
 import { Switch } from "@/lib/components/core/default/switch";
 import { ToggleButton } from "@/lib/components/core/default/toggle-button";
 import Calendar from "@/lib/demos/components/core/calendar/default";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config";
 
 export const Hero = ({ className }: { className?: string }) => {

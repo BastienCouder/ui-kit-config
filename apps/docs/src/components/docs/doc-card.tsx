@@ -9,7 +9,7 @@ import { Badge } from "@/lib/components/core/default/badge";
 import { ScrollArea } from "@/lib/components/core/default/scroll-area";
 import { Tooltip } from "@/lib/components/core/default/tooltip";
 import { useDebounce } from "@/lib/hooks/use-debounce";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 import { truncateOnWord } from "@/lib/utils/string";
 import type { DocMetadata } from "@/types/docs";
 

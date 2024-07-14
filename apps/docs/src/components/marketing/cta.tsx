@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { getGitHubStars } from "@/utils/github";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config";
 import { GitHubIcon } from "../icons";
 

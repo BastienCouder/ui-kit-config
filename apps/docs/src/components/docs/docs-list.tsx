@@ -1,6 +1,6 @@
 import { getDocTypeFromSlug } from "@/utils/docs";
-import { Button } from "@/lib/components/core/default/button";
-import { cn } from "@/lib/utils/classes";
+import { Button } from "@/lib/components/core/default/react/button";
+import { cn } from "@/lib/utils";
 import { getDocs } from "@/server/docs";
 import { DocCard } from "./doc-card";
 
@@ -14,6 +14,7 @@ export interface DocsListProps {
 
 export const DocsList = ({ name, href, limit, className, cardClassName }: DocsListProps) => {
   const docs = getDocs(name);
+
 
   const type = getDocTypeFromSlug(name);
   const hasMore = limit ? docs.length > limit : false;

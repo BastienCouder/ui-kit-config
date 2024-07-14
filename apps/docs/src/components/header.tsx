@@ -8,10 +8,10 @@ import { MenuIcon } from "lucide-react";
 import { GitHubIcon, TwitterIcon } from "@/components/icons";
 import { Avatar } from "@/lib/components/core/default/avatar";
 import { Badge } from "@/lib/components/core/default/badge";
-import { Button } from "@/lib/components/core/default/button";
+import { Button } from "@/lib/components/core/default/react/button";
 import { Dialog, DialogRoot } from "@/lib/components/core/default/dialog";
 import { useScrolled } from "@/lib/hooks/use-scrolled";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 import { focusRing } from "@/lib/utils/styles";
 import { siteConfig } from "@/config";
 import { SearchDocs } from "./docs/search-docs";
@@ -42,20 +42,17 @@ export const Header = () => {
               )}
               aria-hidden={scrolled}
             >
-              <Avatar
+              {/* <Avatar
                 src={siteConfig.global.logo}
                 alt={siteConfig.global.name}
                 loading="lazy"
                 width={24}
                 height={24}
                 className="size-6 rounded-sm"
-              />
+              /> */}
               <div className="mt-1 font-josephin font-bold leading-normal tracking-tighter">
                 {siteConfig.global.name}
               </div>
-              <Badge size="sm" variant="neutral" className="border">
-                beta
-              </Badge>
             </Link>
           </div>
           <div
@@ -100,16 +97,6 @@ export const Header = () => {
               aria-label="github"
             >
               <GitHubIcon />
-            </Button>
-            <Button
-              href={siteConfig.links.twitter}
-              target="_blank"
-              size="sm"
-              shape="square"
-              variant="quiet"
-              aria-label="twitter"
-            >
-              <TwitterIcon />
             </Button>
             <ThemeToggle />
           </div>

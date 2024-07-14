@@ -5,7 +5,7 @@ import { GitHubIcon, TwitterIcon } from "@/components/icons";
 import { Avatar } from "@/lib/components/core/default/avatar";
 import { Badge } from "@/lib/components/core/default/badge";
 import { Separator } from "@/lib/components/core/default/separator";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 import { focusRing } from "@/lib/utils/styles";
 import { siteConfig } from "@/config";
 

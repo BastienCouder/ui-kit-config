@@ -4,6 +4,10 @@ const config = {
   parserOptions: {
     project: true,
   },
+  overrides: [
+    { files:'@/lib/demo/**' },
+    { rules: { "import/no-unresolved": "off" } }
+  ],
   plugins: ["@typescript-eslint"],
   extends: [
     "next/core-web-vitals",

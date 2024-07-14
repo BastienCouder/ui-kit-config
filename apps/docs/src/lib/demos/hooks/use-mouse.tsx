@@ -10,7 +10,7 @@ import {
   TableRow,
 } from "@/lib/components/core/default/table";
 import { useMouse } from "@/lib/hooks/use-mouse";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 
 export default function Demo() {
   const [mouse, ref] = useMouse<HTMLDivElement>();

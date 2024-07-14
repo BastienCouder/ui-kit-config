@@ -8,7 +8,7 @@ import {
 } from "react-aria-components";
 import { type VariantProps } from "tailwind-variants";
 import { CalendarIcon } from "@/lib/icons";
-import { Button } from "./button";
+import { Button } from "./react/button";
 import { Calendar } from "./calendar";
 import { DateInput, DateSegment } from "./date-input";
 import { Dialog } from "./dialog";

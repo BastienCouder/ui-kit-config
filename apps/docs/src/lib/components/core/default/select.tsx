@@ -10,7 +10,7 @@ import {
 } from "react-aria-components";
 import { tv } from "tailwind-variants";
 import { ChevronDownIcon } from "@/lib/icons";
-import { Button, type ButtonProps } from "./button";
+import { Button, type ButtonProps } from "./react/button";
 import { Field, type FieldProps } from "./field";
 import { ListBox, type ListBoxProps } from "./list-box";
 import { Overlay } from "./overlay";

@@ -42,6 +42,21 @@ const config = {
             hover: "hsl(var(--color-bg-primary-hover))",
             active: "hsl(var(--color-bg-primary-active))",
           },
+          secondary: {
+            DEFAULT: "hsl(var(--color-bg-secondary))",
+            hover: "hsl(var(--color-bg-secondary-hover))",
+            active: "hsl(var(--color-bg-secondary-active))",
+          },
+          outline: {
+            DEFAULT: "hsl(var(--color-bg-outline))",
+            hover: "hsl(var(--color-bg-outline-hover))",
+            active: "hsl(var(--color-bg-outline-active))",
+          },
+          ghost: {
+            DEFAULT: "hsl(var(--color-bg-ghost))",
+            hover: "hsl(var(--color-bg-ghost-hover))",
+            active: "hsl(var(--color-bg-ghost-active))",
+          },
           success: {
             DEFAULT: "hsl(var(--color-bg-success))",
             hover: "hsl(var(--color-bg-success-hover))",

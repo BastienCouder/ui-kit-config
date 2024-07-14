@@ -1,5 +1,5 @@
 import { DocsList } from "@/components/docs/docs-list";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 
 export const Explore = ({ className }: { className: string }) => {
   const categories = [

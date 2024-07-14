@@ -19,7 +19,7 @@ import { Modal as AriaModal, Dialog as AriaDialog } from "react-aria-components"
 import Balancer from "react-wrap-balancer";
 import { useConfig } from "@/hooks/use-config";
 import { usePalette } from "@/hooks/use-palette";
-import { Button } from "@/lib/components/core/default/button";
+import { Button } from "@/lib/components/core/default/react/button";
 import { ColorPicker } from "@/lib/components/core/default/color-picker";
 import { Dialog, DialogRoot } from "@/lib/components/core/default/dialog";
 import { NumberField } from "@/lib/components/core/default/number-field";
@@ -29,7 +29,7 @@ import { TextField } from "@/lib/components/core/default/text-field";
 import { ToggleGroup, ToggleGroupButton } from "@/lib/components/core/default/toggle-group";
 import { Tooltip } from "@/lib/components/core/default/tooltip";
 import { useMediaQuery } from "@/lib/hooks/use-media-query";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 
 export default function ThemesPage() {
   const { mode, setMode, theme } = useConfig();

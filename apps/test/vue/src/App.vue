@@ -1,17 +1,29 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import Button from './components/Button.vue';
+import { BeakerIcon } from '@heroicons/vue/24/solid';
+import { LinkIcon } from '@heroicons/vue/24/solid';
+import { ref } from 'vue';
+const someVariable = ref(5);
 </script>
 
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <div class="flex gap-2 items-start">
+  <Button variant="default" size="lg">Button</Button>
+  <Button variant="quiet" size="sm">Button</Button>
+  <Button variant="secondary" size="md">Button</Button>
+  <Button variant="danger" shape="circle"><BeakerIcon /></Button>
+  <Button variant="success" ><BeakerIcon /></Button>
+  <Button variant="warning" isLoading :isDisabled="someVariable === 5" :prefix="BeakerIcon" :suffix="BeakerIcon">Button</Button>
+  <Button variant="outline" >Button</Button>
+  <Button variant="warning" size="sm" href="/login" target="_blank" :prefix="LinkIcon">
+      Login
+    </Button>
+  </div>
 </template>
 
 <style scoped>

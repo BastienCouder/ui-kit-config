@@ -2,7 +2,7 @@
 
 // This compnoent is not ready for production use. It is a work in progress.
 import React from "react";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 import { avatarStyles } from "./avatar";
 
 type AvatarGroupProps = React.HTMLAttributes<HTMLDivElement> & {

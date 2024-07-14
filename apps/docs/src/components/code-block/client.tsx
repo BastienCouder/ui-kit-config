@@ -4,10 +4,10 @@ import React from "react";
 import { CheckIcon, CopyIcon } from "lucide-react";
 import type { Key } from "react-aria-components";
 import { tv } from "tailwind-variants";
-import { Button, type ButtonProps } from "@/lib/components/core/default/button";
+import { Button, type ButtonProps } from "@/lib/components/core/default/react/button";
 import { ScrollArea, type ScrollAreaProps } from "@/lib/components/core/default/scroll-area";
 import { Tab, Tabs, TabList, TabPanel, type TabsProps } from "@/lib/components/core/default/tabs";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 
 const codeBlockStyles = tv({
   slots: {
@@ -36,6 +36,7 @@ const CodeBlockClient = ({
   expandable = false,
   ...props
 }: CodeBlockClientProps) => {
+  
   const [activeTab, setActiveTab] = React.useState<Key>(files[0].fileName);
   const [isExpanded, setExpanded] = React.useState(false);
   const handleExpand = () => {
@@ -63,7 +64,7 @@ const CodeBlockClient = ({
         </div>
         <div className="flex items-center gap-2">
           {(preview || expandable) && (
-            <Button variant="default" size="sm" className="h-7 text-xs" onPress={handleExpand}>
+            <Button variant="default" size="sm" className="h-7 text-xs" onClick={handleExpand}>
               {isExpanded ? "Collapse" : "Expand"} code
             </Button>
           )}
@@ -126,7 +127,7 @@ const CodeBlockCopyButton = ({ code, ...props }: CodeBlockCopyButtonProps) => {
       size="sm"
       shape="square"
       variant="default"
-      onPress={handleCopy}
+      onClick={handleCopy}
       className="size-7 [&_svg]:size-3"
       {...props}
     >

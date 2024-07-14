@@ -3,7 +3,7 @@
 import React from "react";
 import { CheckIcon, CopyIcon } from "lucide-react";
 import { tv } from "tailwind-variants";
-import { Button } from "@/lib/components/core/default/button";
+import { Button } from "@/lib/components/core/default/react/button";
 import { ScrollArea } from "@/lib/components/core/default/scroll-area";
 
 const codeStyles = tv({
@@ -44,7 +44,7 @@ const CodeClient = ({ className, inline = false, children, code }: CodeClientPro
             shape="square"
             size="sm"
             className="absolute right-2 top-2 [&_svg]:size-3"
-            onPress={handleCopy}
+            onClick={handleCopy}
           >
             {copied ? (
               <CheckIcon className="animate-in fade-in" />

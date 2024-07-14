@@ -5,9 +5,9 @@ import { ExternalLinkIcon } from "lucide-react";
 import { TableOfContents } from "@/components/docs/toc";
 import { Mdx } from "@/components/mdx/mdx-remote";
 import { Breadcrumbs, Breadcrumb } from "@/lib/components/core/default/breadcrumbs";
-import { Button } from "@/lib/components/core/default/button";
+import { Button } from "@/lib/components/core/default/react/button";
 import { ScrollArea } from "@/lib/components/core/default/scroll-area";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 import { getDocFromSlug, getDocs } from "@/server/docs";
 
 interface PageProps {
@@ -76,15 +76,6 @@ export default async function Page({ params }: PageProps) {
                 target="_blank"
               >
                 {link.label}
-              </Button>
-            ))}
-          </div>
-        )}
-        {categories && categories.length > 0 && (
-          <div className="mt-6 flex flex-wrap gap-2">
-            {categories.map((category, index) => (
-              <Button key={index} size="sm" href={category.href} className="h-7">
-                {category.label}
               </Button>
             ))}
           </div>

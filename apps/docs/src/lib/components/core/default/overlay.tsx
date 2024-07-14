@@ -14,8 +14,8 @@ import {
 import { tv } from "tailwind-variants";
 import { useMediaQuery } from "@/lib/hooks/use-media-query";
 import { XIcon } from "@/lib/icons";
-import { cn } from "@/lib/utils/classes";
-import { Button, type ButtonProps } from "./button";
+import { cn } from "@/lib/utils";
+import { Button, type ButtonProps } from "./react/button";
 import { MotionDrawerRoot, useMotionDrawer } from "./use-motion-drawer";
 
 type OverlayType = "modal" | "drawer" | "popover";
@@ -260,7 +260,7 @@ const DismissButton = (props: ButtonProps) => {
       aria-label="Close"
       {...props}
       className={cn("absolute right-2 top-2 z-20", props.className)}
-      onPress={() => state.close()}
+      onClick={() => state.close()}
     >
       {props.children ?? <XIcon />}
     </Button>

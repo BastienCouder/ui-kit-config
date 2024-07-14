@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 import { AdobeLogo } from "@/assets/images/brands/adobe";
 import { FramerLogo } from "@/assets/images/brands/framer";
 import { NextjsLogo } from "@/assets/images/brands/nextjs";

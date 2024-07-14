@@ -16,7 +16,7 @@ import {
   TextContext as AriaTextContext,
 } from "react-aria-components";
 import { tv, type VariantProps } from "tailwind-variants";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 import { focusRing } from "@/lib/utils/styles";
 import { Description, Label, type FieldProps } from "./field";
 

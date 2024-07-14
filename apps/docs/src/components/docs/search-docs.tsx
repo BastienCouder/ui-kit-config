@@ -3,7 +3,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { FileIcon, SearchIcon } from "lucide-react";
-import { Button, type ButtonProps } from "@/lib/components/core/default/button";
+import { Button, type ButtonProps } from "@/lib/components/core/default/react/button";
 import {
   Command,
   CommandEmpty,
@@ -13,7 +13,7 @@ import {
   CommandList,
 } from "@/lib/components/core/default/command";
 import { DialogRoot, Dialog } from "@/lib/components/core/default/dialog";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 import { docsConfig } from "@/config/docs-config";
 
 export const SearchDocs = (props: ButtonProps) => {
@@ -85,7 +85,7 @@ export const SearchDocs = (props: ButtonProps) => {
                       </CommandItem>
                     );
                   }
-                  if ("items" in item && item.items.length > 0) {
+                  if ("items" in item && item.items && item.items.length > 0) {
                     return (
                       <React.Fragment key={itemIndex}>
                         {item.items.map((subItem, subItemIndex) => {

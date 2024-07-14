@@ -1,9 +1,8 @@
 import React from "react";
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 import { truncateOnWord } from "@/lib/utils/string";
 import { JosephinFont, fontDisplay, geistMono, geistSans } from "@/styles/fonts";
 import "@/styles/globals.css";
@@ -67,7 +66,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <Header />
           <main>{children}</main>
-          <Footer />
+          {/* <Footer /> */}
+          {/* <LayoutColumnsGrid /> */}
         </Providers>
       </body>
     </html>

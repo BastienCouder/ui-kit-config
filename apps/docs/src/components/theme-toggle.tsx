@@ -3,7 +3,7 @@
 import React from "react";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
-import { Button } from "@/lib/components/core/default/button";
+import { Button } from "@/lib/components/core/default/react/button";
 import { Item, ListBox } from "@/lib/components/core/default/list-box";
 import { Overlay } from "@/lib/components/core/default/overlay";
 import { SelectRoot } from "@/lib/components/core/default/select";

@@ -10,7 +10,7 @@ import {
   type SliderTrackProps as AriaSliderTrackProps,
 } from "react-aria-components";
 import { tv } from "tailwind-variants";
-import { cn } from "@/lib/utils/classes";
+import { cn } from "@/lib/utils";
 import { ColorThumb } from "./color-thumb";
 import { Label } from "./field";
 

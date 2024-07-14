@@ -8,26 +8,37 @@
     --color-white: 0 0 100%;
 
     --color-neutral-100: 0 0% 98%; /* Background layers (default bg) */
-    --color-neutral-200: 0 0% 94%; /* Background layers (Bg secondary/muted) */ /* Decorative border */
-    --color-neutral-300: 0 0% 90%; /* Decorative border */
-    --color-neutral-400: 0 0% 85%; /* Field border */
-    --color-neutral-500: 0 0% 80%; /* Disabled Text */
-    --color-neutral-600: 0 0% 40%; /* control border (switch/checkbox/radio) */
+    --color-neutral-200: 0 0% 79%; /* Background layers (Bg secondary/muted) */ /* Decorative border */
+    --color-neutral-300: 0 0% 73%; /* Decorative border */
+    --color-neutral-400: 0 0% 65%; /* Field border */
+    --color-neutral-500: 0 0% 54%; /* Disabled Text */
+    --color-neutral-600: 0 0% 42%; /* control border (switch/checkbox/radio) */
     --color-neutral-700: 0 0% 35%; /* Text secondary (muted) */
     --color-neutral-800: 0 0% 28%; /* Text */
     --color-neutral-900: 0 0% 16%; /* Heading Text */
     --color-neutral-1000: 0 0% 12%;
 
-    --color-primary-100: 0 0% 87%;
-    --color-primary-200: 0 0% 79%;
-    --color-primary-300: 0 0% 73%;
-    --color-primary-400: 0 0% 65%;
-    --color-primary-500: 0 0% 54%;
-    --color-primary-600: 0 0% 42%;
-    --color-primary-700: 0 0% 35%;
-    --color-primary-800: 0 0% 28%;
-    --color-primary-900: 0 0% 16%;
-    --color-primary-1000: 0 0% 12%;
+    --color-primary-100: 189, 100%, 98%;
+    --color-primary-200: 189, 100%, 92%;
+    --color-primary-300: 189, 100%, 86%;
+    --color-primary-400: 189, 100%, 80%;
+    --color-primary-500: 189, 100%, 78%;
+    --color-primary-600: 189, 100%, 72%;
+    --color-primary-700: 189, 100%, 66%;
+    --color-primary-800: 189, 100%, 60%;
+    --color-primary-900: 189, 100%, 54%;
+    --color-primary-1000: 189, 100%, 50%;
+
+    --color-secondary-100: 0 0% 87%;
+    --color-secondary-200: 0 0% 79%;
+    --color-secondary-300: 0 0% 73%;
+    --color-secondary-400: 0 0% 65%;
+    --color-secondary-500: 0 0% 54%;
+    --color-secondary-600: 0 0% 42%;
+    --color-secondary-700: 0 0% 35%;
+    --color-secondary-800: 0 0% 28%;
+    --color-secondary-900: 0 0% 16%;
+    --color-secondary-1000: 0 0% 12%;
 
     --color-success-100: 130 34% 83%;
     --color-success-200: 131 35% 75%;
@@ -86,9 +97,21 @@
     --color-bg-neutral-hover: var(--color-neutral-400);
     --color-bg-neutral-active: var(--color-neutral-500);
 
-    --color-bg-primary: var(--color-neutral-1000);
-    --color-bg-primary-hover: var(--color-neutral-900);
-    --color-bg-primary-active: var(--color-neutral-800);
+    --color-bg-primary: var(--color-primary-1000);
+    --color-bg-primary-hover: var(--color-primary-900);
+    --color-bg-primary-active: var(--color-primary-800);
+
+    --color-bg-secondary: var(--color-secondary-1000);
+    --color-bg-secondary-hover: var(--color-secondary-900);
+    --color-bg-secondary-active: var(--color-secondary-800);
+
+    --color-bg-outline: var(--color-neutral-1000);
+    --color-bg-outline-hover: var(--color-neutral-900);
+    --color-bg-outline-active: var(--color-neutral-800);
+
+    --color-bg-ghost: var(--color-neutral-1000);
+    --color-bg-ghost-hover: var(--color-neutral-900);
+    --color-bg-ghost-active: var(--color-neutral-800);
 
     --color-bg-success: var(--color-success-500);
     --color-bg-success-hover: var(--color-success-600);
@@ -223,7 +246,6 @@
     --color-fg-onTooltip: var(--color-white);
   }
 }
-
 @layer base {
   * {
     @apply border-border;
@@ -276,6 +298,9 @@
       @apply px-4;
     }
   }
+}
+::-webkit-scrollbar {
+display: none;
 }
 .shiki,
 .shiki span {

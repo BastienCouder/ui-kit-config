@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Button } from "@/lib/components/core/default/button";
+import { Button } from "@/lib/components/core/default/react/button";
 import { TextArea } from "@/lib/components/core/default/text-area";
 import { ClientOnly } from "@/lib/components/utils/client-only";
 import { useLocalStorage } from "@/lib/hooks/use-local-storage";
@@ -22,7 +22,7 @@ function Demo() {
       <div className="mt-4 flex items-center justify-end space-x-2">
         <Button
           size="sm"
-          onPress={() => {
+          onClick={() => {
             setInput("");
             saveWriting(null);
           }}
@@ -32,7 +32,7 @@ function Demo() {
         <Button
           variant="primary"
           size="sm"
-          onPress={() => {
+          onClick={() => {
             saveWriting(input);
           }}
         >

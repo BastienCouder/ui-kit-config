@@ -31,7 +31,7 @@
     "src/hooks/use-mounted.ts",
     "content/components/core/feedback/alert.mdx",
     "content/components/core/data-display/accordion.mdx",
-    "content/components/utils/client-only.mdx",
+    "content/components/utils/client-only.mdx", "src/lib/demos/components/core/vue/button/default.vue", "src/lib/demos/components/core/vue/button/disabled.vue", "src/lib/demos/components/core/vue/button/variants.vue", "src/lib/demos/components/core/vue/button/sizes.vue", "src/lib/demos/components/core/vue/button/shapes.vue", "src/lib/demos/components/core/vue/button/prefix-and-suffix.vue", "src/lib/demos/components/core/vue/button/loading.vue", "src/lib/demos/components/core/vue/button/link-button.vue",
   ],
   "exclude": ["node_modules"],
 }

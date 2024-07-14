@@ -1,16 +1,17 @@
+
 import { existsSync, promises as fs } from "fs"
 import path from "path"
-import { Config, getConfig } from "../utils/get-config"
-import { handleError } from "../utils/handle-error"
-import { logger } from "../utils/logger"
+import { Config, getConfig } from "@/src/utils/get-config"
+import { handleError } from "@/src/utils/handle-error"
+import { logger } from "@/src/utils/logger"
 import {
   fetchTree,
   getItemTargetPath,
   getRegistryBaseColor,
   getRegistryIndex,
-} from "../utils/registry"
-import { registryIndexSchema } from "../utils/registry/schema"
-import { transform } from "../utils/transformers"
+} from "@/src/utils/registry"
+import { registryIndexSchema } from "@/src/utils/registry/schema"
+import { transform } from "@/src/utils/transformers"
 import chalk from "chalk"
 import { Command } from "commander"
 import { diffLines, type Change } from "diff"
@@ -75,7 +76,7 @@ export const diff = new Command()
         })
 
         // Check for updates.
-        const componentsWithUpdates: { name: string, changes: { file: any, filePath: string, patch: Change[] }[] }[] = []
+        const componentsWithUpdates = []
         for (const component of projectComponents) {
           const changes = await diffComponent(component, config)
           if (changes.length) {
@@ -141,7 +142,7 @@ async function diffComponent(
   const payload = await fetchTree(config.style, [component])
   const baseColor = await getRegistryBaseColor(config.tailwind.baseColor)
 
-  const changes: { file: any; filePath: string; patch: Change[] }[] = []
+  const changes = []
 
   for (const item of payload) {
     const targetDir = await getItemTargetPath(config, item)

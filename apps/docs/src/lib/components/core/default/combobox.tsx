@@ -7,7 +7,7 @@ import {
 } from "react-aria-components";
 import { tv } from "tailwind-variants";
 import { ChevronDownIcon } from "@/lib/icons";
-import { Button } from "./button";
+import { Button } from "./react/button";
 import { Field, type FieldProps } from "./field";
 import { Input, InputRoot } from "./input";
 import { ListBox } from "./list-box";

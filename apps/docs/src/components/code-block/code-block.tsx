@@ -10,16 +10,17 @@ interface CodeBlockProps extends CodeBlockRootProps {
   }[];
   preview?: string;
   expandable?: boolean;
+  language?: string;
 }
 
 const CodeBlock = async ({ files: _files, preview: _preview, ...props }: CodeBlockProps) => {
   let preview = undefined;
   if (_preview) {
     const html = await codeToHtml(_preview, {
-      lang: "tsx",
+      lang: props.language || "tsx",
       themes: {
         light: "github-light",
-        dark: "github-dark-dimmed",
+        dark: "aurora-x",
       },
     });
     preview = (
@@ -29,15 +30,17 @@ const CodeBlock = async ({ files: _files, preview: _preview, ...props }: CodeBlo
       />
     );
   }
+  
   const files = await Promise.all(
     _files.map(async ({ fileName, code, lang }) => {
       const html = await codeToHtml(code, {
-        lang: lang,
+        lang: props.language || lang,
         themes: {
           light: "light-plus",
-          dark: "github-dark-dimmed",
+          dark: "aurora-x",
         },
       });
+
 
       return {
         fileName,

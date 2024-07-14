@@ -4,6 +4,7 @@ import { getDocTypeFromSlug } from "@/utils/docs";
 import type { Doc, DocCategory, DocFrontmatter, DocMetadata, DocType } from "@/types/docs";
 import { getTableOfContents } from "../utils/toc";
 import { getAllMdxFiles, parseMDXFile } from "./mdx";
+import { LogIn } from "react-feather";
 
 const getBreadcrumbs = (slug: string[]): { label: string; href: string }[] => {
   const result = slug.map((slugPart, index) => {
@@ -121,6 +122,7 @@ export const getDocFromSlug = async (slug: string[]): Promise<Doc | null> => {
 // getDocs("components/core") returns all docs from content/components/core folder
 export const getDocs = (slug?: string, includeIndex = false): DocMetadata[] => {
   const directoryPath = path.join(process.cwd(), "content", ...(slug ? slug.split("/") : []));
+
   // console.log(
   //   getAllMdxFiles(directoryPath, directoryPath, [], includeIndex).map(
   //     ({ fullPath, relativePath }) => {

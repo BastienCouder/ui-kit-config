@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Button } from "@/lib/components/core/default/button";
+import { Button } from "@/lib/components/core/default/react/button";
 import { usePrevious } from "@/lib/hooks/use-previous";
 
 function getRandomColor() {
@@ -27,7 +27,7 @@ export default function Demo() {
 
   return (
     <div className="text-center">
-      <Button size="sm" onPress={handleClick}>
+      <Button size="sm" onClick={handleClick}>
         Next
       </Button>
       <div className="mt-8 grid grid-cols-2 gap-4">
