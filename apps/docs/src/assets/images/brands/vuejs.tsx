@@ -1,8 +1,6 @@
 import * as React from "react";
 
-export const VueLogo = (
-  props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-) => (
+export const VueLogo = (props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 262 33" {...props}>
     <path
       fill="#38BDF8"

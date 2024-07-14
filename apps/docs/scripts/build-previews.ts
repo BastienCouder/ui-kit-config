@@ -13,7 +13,6 @@ export const parseMDXFiles = (
 ): Preview[] => {
   const files = fs.readdirSync(directory);
 
-
   files.forEach((file) => {
     const filePath = path.join(directory, file);
     const fileStat = fs.statSync(filePath);
@@ -21,7 +20,6 @@ export const parseMDXFiles = (
     if (fileStat.isDirectory()) {
       parseMDXFiles(filePath, rootDirectory, filesArray);
     } else if (path.extname(file) === ".mdx") {
-
       // search with regex the compoonent ComponentPreview and get name from its prop
       const fileContent = fs.readFileSync(filePath, "utf-8");
       const componentNames = (
@@ -57,13 +55,11 @@ import React from "react";
 export const previews = {
 `;
 
-const supportedExtensions = [".tsx", ".vue"];
-const adjustRelativePath = (relativePath:string) => {
-  const replace = relativePath.replace('/vue/', '/react/');
-  console.log(replace);
+const supportedExtensions = [".tsx", ".vue", ".ts"];
+const adjustRelativePath = (relativePath: string) => {
+  const replace = relativePath.replace(/\/angular\/|\/vue\//g, "/react/");
   return replace;
 };
-
 allPreviews.forEach(({ relativePath }) => {
   const adjustedRelativePath = adjustRelativePath(relativePath); // Ajuster le chemin relativePath
   const fullPath = path.join(process.cwd(), "src", "lib", relativePath);

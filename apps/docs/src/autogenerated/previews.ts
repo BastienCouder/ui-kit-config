@@ -4,6 +4,10 @@
 import React from "react";
 
 export const previews = {
+  "demos/components/core/angular/button/default": {
+    component: React.lazy(() => import("@/lib/demos/components/core/react/button/default")),
+    code: [{"title":"default.ts","code":"import { Component } from '@angular/core';\r\nimport { HlmButtonModule } from '@/lib/components/core/default/angular/button/hlm-button.module';\r\nimport { LoaderIconComponent } from '@/lib/components/core/default/angular/lib/icons/icons';\r\n\r\n@Component({\r\n  selector: 'button-preview',\r\n  standalone: true,\r\n  imports: [HlmButtonModule],\r\n  template: `<Button hlmBtn>Button</Button>`,\r\n})\r\nexport class ButtonPreviewComponent {\r\n  LoaderIconComponent = LoaderIconComponent;\r\n}"}]
+  },
   "demos/components/core/react/button/default": {
     component: React.lazy(() => import("@/lib/demos/components/core/react/button/default")),
     code: [{"title":"default.tsx","code":"import { Button } from \"@/lib/components/core/default/react/button\";\r\n\r\nexport default function Demo() {\r\n  return <Button>Button</Button>;\r\n}\r\n"}]

@@ -6,7 +6,11 @@ thumbnail:
   video: /previews/components/core/button.mp4
 ---
 
-<ComponentPreview name="demos/components/core/react/button/default" preview={`<Button>button</Button>`} extension={'tsx'} />
+<ComponentPreview
+  name="demos/components/core/react/button/default"
+  preview={`<Button>button</Button>`}
+  extension={"tsx"}
+/>
 
 ## Installation
 
@@ -109,7 +113,7 @@ To use a button as a link, use the `href` prop the button will automatically ren
 ## API Reference
 
 | Prop             | Type                                                                                                | Default       | Description                                                                                                 |
-| ---------------- | --------------------------------------------------------------------------------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------- |
+| ---------------- | --------------------------------------------------------------------------------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------- | --- |
 | `variant`        | `"default" \| "primary" \| "quiet" \| "outline" \| "accent" \| "danger" \| "success" \| "warning"`  | `"default"`   | The visual style of the button.                                                                             |
 | `size`           | `"sm" \| "md" \| "lg"`                                                                              | `"md"`        | The size of the button.                                                                                     |
 | `shape`          | `"rectangle" \| "square" \| "circle"`                                                               | `"rectangle"` | The visual shape of the button.                                                                             |
@@ -131,7 +135,7 @@ To use a button as a link, use the `href` prop the button will automatically ren
 | `routerOptions`  | `RouterOptions`                                                                                     | -             | Options for the configured client side router.                                                              |
 | `children`       | `ReactNode \| (values: ButtonRenderProps & {defaultChildren: ReactNode \| undefined}) => ReactNode` | -             | The children of the component. A function may be provided to alter the children based on component state.   |
 | `className`      | `string`                                                                                            | -             | The CSS className for the element.                                                                          |
-| `style`          | `CSSProperties \| (values: ButtonRenderProps & {defaultStyle: CSSProperties}) => CSSProperties`     | -             | The inline style for the element. A function may be provided to compute the style based on component state. |                                                                 |
+| `style`          | `CSSProperties \| (values: ButtonRenderProps & {defaultStyle: CSSProperties}) => CSSProperties`     | -             | The inline style for the element. A function may be provided to compute the style based on component state. |     |
 
 | Data attribute         | Description                                                    |
 | ---------------------- | -------------------------------------------------------------- |

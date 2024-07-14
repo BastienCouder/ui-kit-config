@@ -19,10 +19,10 @@ import { Modal as AriaModal, Dialog as AriaDialog } from "react-aria-components"
 import Balancer from "react-wrap-balancer";
 import { useConfig } from "@/hooks/use-config";
 import { usePalette } from "@/hooks/use-palette";
-import { Button } from "@/lib/components/core/default/react/button";
 import { ColorPicker } from "@/lib/components/core/default/color-picker";
 import { Dialog, DialogRoot } from "@/lib/components/core/default/dialog";
 import { NumberField } from "@/lib/components/core/default/number-field";
+import { Button } from "@/lib/components/core/default/react/button";
 import { Slider } from "@/lib/components/core/default/slider";
 import { Switch } from "@/lib/components/core/default/switch";
 import { TextField } from "@/lib/components/core/default/text-field";
@@ -48,7 +48,7 @@ export default function ThemesPage() {
         </p>
         <div className="mt-8 flex items-center gap-2">
           <DialogRoot>
-            <Button variant="primary" size="lg">
+            <Button variant="default" size="lg">
               Explore themes
             </Button>
             <Dialog type="drawer" title="Themes">
@@ -246,7 +246,7 @@ const ColorScalesPopover = ({
         </div>
         <div className="flex justify-end">
           <Button
-            variant="primary"
+            variant="default"
             // onPress={updateTheme}
           >
             Apply changes
@@ -270,7 +270,7 @@ const Preview = () => {
           <AriaDialog className="h-full outline-none">
             {({ close }) => (
               <PreviewBase view={view} onViewChange={setView}>
-                <Button shape="square" variant="quiet" size="sm" onPress={close}>
+                <Button shape="square" variant="quiet" size="sm" onClick={close}>
                   <Minimize2Icon />
                 </Button>
               </PreviewBase>

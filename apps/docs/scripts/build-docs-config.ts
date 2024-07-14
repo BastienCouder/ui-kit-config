@@ -4,7 +4,6 @@ import { rimraf } from "rimraf";
 import type { DocsConfig } from "@/types/docs";
 import { Item, SubCategory } from "@/types/docs-nav";
 
-
 const COMPONENTS_BASE_PATH = path.join(process.cwd(), "content/components");
 
 // Function to generate navigation items recursively

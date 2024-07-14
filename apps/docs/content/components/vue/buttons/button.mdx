@@ -6,7 +6,11 @@ thumbnail:
   video: /previews/components/core/button.mp4
 ---
 
-<ComponentPreview name="demos/components/core/vue/button/default" preview={`<Button>button</Button>`} language="vue"/>
+<ComponentPreview
+  name="demos/components/core/vue/button/default"
+  preview={`<Button>button</Button>`}
+  language="vue"
+/>
 
 ## Installation
 
@@ -44,7 +48,7 @@ The default variant is `"default"`.
 <Button variant="warning">warning</Button>
 <Button variant="danger">danger</Button>
 <Button variant="accent">accent</Button>`}
-language="vue"
+  language="vue"
 />
 
 ### Size
@@ -57,7 +61,7 @@ The default size is `"md"`.
   preview={`<Button size="sm">Button</Button>
 <Button size="md">Button</Button>
 <Button size="lg">Button</Button>`}
-language="vue"
+  language="vue"
 />
 
 ### Shape
@@ -69,7 +73,7 @@ Icon-only buttons should include an `aria-label`.
   name="demos/components/core/vue/button/shapes"
   preview={`<Button shape="square"><UplaodIcon /></Button>
 <Button shape="circular"><UplaodIcon /></Button>`}
-language="vue"
+  language="vue"
 />
 
 ### Prefix and suffix
@@ -80,7 +84,7 @@ To add additional context for a button label, such as a search icon next to the 
   name="demos/components/core/vue/button/prefix-and-suffix"
   preview={`<Button :prefix="UplaodIcon">Upload</Button>
 <Button :suffix="UplaodIcon">Upload</Button>`}
-language="vue"
+  language="vue"
 />
 
 ### Loading

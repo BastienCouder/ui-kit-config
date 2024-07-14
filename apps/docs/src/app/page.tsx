@@ -6,7 +6,7 @@ import { Hero } from "@/components/marketing/hero";
 export default function HomePage() {
   return (
     <main className="container pb-36 pt-16">
-      <Hero />
+      {/* <Hero /> */}
       {/* <Brands className="mt-24 lg:mt-16" /> */}
       {/* <Explore className="mt-24" /> */}
       {/* <CallToAction className="mt-40" /> */}
