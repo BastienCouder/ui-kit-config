@@ -4,7 +4,7 @@ import { SettingsIcon } from "lucide-react";
 import { useConfig } from "@/hooks/use-config";
 import { Dialog, DialogRoot } from "@/lib/components/core/default/dialog";
 import { Item } from "@/lib/components/core/default/list-box";
-import { Button } from "@/lib/components/core/default/react/button";
+import { Button } from "@/lib/components/core/default/react/buttons/button";
 import { Select } from "@/lib/components/core/default/select";
 import type { IconLibrary } from "@/types/icons";
 

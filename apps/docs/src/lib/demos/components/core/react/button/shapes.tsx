@@ -1,4 +1,4 @@
-import { Button } from "@/lib/components/core/default/react/button";
+import { Button } from "@/lib/components/core/default/react/buttons/button";
 import { UploadIcon } from "@/lib/icons";
 
 export default function Demo() {

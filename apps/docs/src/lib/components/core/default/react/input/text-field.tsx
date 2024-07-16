@@ -39,24 +39,25 @@ const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
     ref
   ) => {
     return (
-      <Field
-        label={label}
-        description={description}
-        errorMessage={errorMessage}
-        necessityIndicator={necessityIndicator}
-        contextualHelp={contextualHelp}
-      >
-        <InputRoot
-          size={size}
-          prefix={prefix}
-          suffix={suffix}
-          isLoading={isLoading}
-          loaderPosition={loaderPosition}
-          className={className}
+      <div className={textFieldStyles({ className })}>
+        <Field
+          label={label}
+          description={description}
+          errorMessage={errorMessage}
+          necessityIndicator={necessityIndicator}
+          contextualHelp={contextualHelp}
         >
-          <Input ref={ref} placeholder={placeholder} {...props} />
-        </InputRoot>
-      </Field>
+          <InputRoot
+            size={size as "sm" | "md" | "lg" | undefined} // Explicit type assertion
+            prefix={prefix}
+            suffix={suffix}
+            isLoading={isLoading}
+            loaderPosition={loaderPosition}
+          >
+            <Input ref={ref} placeholder={placeholder} {...props} />
+          </InputRoot>
+        </Field>
+      </div>
     );
   }
 );
@@ -64,10 +65,11 @@ TextField.displayName = "TextField";
 
 type TextFieldRootProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, "className"> & {
   className?: string;
+  size?: "sm" | "md" | "lg";
 };
 
 const TextFieldRoot = React.forwardRef<HTMLInputElement, TextFieldRootProps>(
-  ({ className, ...props }, ref) => {
+  ({ className, size, ...props }, ref) => {
     return <input ref={ref} className={textFieldStyles({ className })} {...props} />;
   }
 );

@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/lib/components/core/default/react/button";
+import { Button } from "@/lib/components/core/default/react/buttons/button";
 import { useCounter } from "@/lib/hooks/use-counter";
 
 export default function Demo() {

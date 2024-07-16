@@ -7,7 +7,7 @@ import {
 } from "react-aria-components";
 import { tv, type VariantProps } from "tailwind-variants";
 import { SearchIcon, XIcon } from "@/lib/icons";
-import { Button } from "./react/button";
+import { Button } from "./react/buttons/button";
 import { Field, type FieldProps } from "./field";
 import { InputRoot, Input, type inputStyles } from "./input";
 

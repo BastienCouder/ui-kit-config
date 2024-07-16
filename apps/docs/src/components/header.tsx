@@ -8,7 +8,7 @@ import { MenuIcon } from "lucide-react";
 import { GitHubIcon, TwitterIcon } from "@/components/icons";
 import { Avatar } from "@/lib/components/core/default/avatar";
 import { Badge } from "@/lib/components/core/default/badge";
-import { Button } from "@/lib/components/core/default/react/button";
+import { Button } from "@/lib/components/core/default/react/buttons/button";
 import { Dialog, DialogRoot } from "@/lib/components/core/default/dialog";
 import { useScrolled } from "@/lib/hooks/use-scrolled";
 import { cn } from "@/lib/utils";

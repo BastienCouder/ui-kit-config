@@ -3,7 +3,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { FileIcon, SearchIcon } from "lucide-react";
-import { Button, type ButtonProps } from "@/lib/components/core/default/react/button";
+import { Button, type ButtonProps } from "@/lib/components/core/default/react/buttons/button";
 import {
   Command,
   CommandEmpty,

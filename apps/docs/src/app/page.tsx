@@ -1,15 +1,18 @@
-import { Brands } from "@/components/marketing/brands";
-import { CallToAction } from "@/components/marketing/cta";
-import { Explore } from "@/components/marketing/explore";
-import { Hero } from "@/components/marketing/hero";
+"use client"
+import { ToggleButton } from "@/lib/components/core/default/react/buttons/toggle";
+import { Bold, PiIcon, PinIcon } from "lucide-react";
+import React from "react";
 
 export default function HomePage() {
+  const [isSelected, setSelected] = React.useState(true);
+
   return (
     <main className="container pb-36 pt-16">
-      {/* <Hero /> */}
-      {/* <Brands className="mt-24 lg:mt-16" /> */}
-      {/* <Explore className="mt-24" /> */}
-      {/* <CallToAction className="mt-40" /> */}
+<div className="flex items-center gap-4">
+<ToggleButton isSelected={isSelected}  onPressedChange={setSelected} >
+    <PinIcon className="rotate-45" />
+  </ToggleButton>
+ </div>
     </main>
   );
 }

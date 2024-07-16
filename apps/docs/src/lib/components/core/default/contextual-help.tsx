@@ -1,6 +1,6 @@
 import { InfoIcon, HelpIcon } from "@/lib/icons";
 import { DialogRoot, Dialog } from "./dialog";
-import { Button } from "./react/button";
+import { Button } from "./react/buttons/button";
 
 interface ContextualHelpProps {
   title?: string;

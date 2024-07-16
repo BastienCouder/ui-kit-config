@@ -4,6 +4,7 @@ import * as React from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 import { LoaderIcon } from "@/lib/icons";
 
+
 const chain = (...fns: any[]) => (...args: any) => {
   for (let fn of fns) {
     if (fn) fn(...args);
@@ -45,7 +46,7 @@ const TextAreaContext = React.createContext<{ ref: HTMLTextAreaElement | null } 
 const inputStyles = tv({
   slots: {
     root: [
-      "inline-flex justify-start items-center gap-2 px-2 transition-colors w-full rounded-md border border-border-field bg-bg shadow-sm cursor-text text-fg-muted text-base sm:text-sm [&_svg]:size-4",
+      "w-full inline-flex justify-start items-center gap-2 px-2 transition-colors rounded-md border border-border-field bg-bg shadow-sm cursor-text text-fg-muted text-base sm:text-sm [&_svg]:size-4",
       "disabled:cursor-default disabled:border-border-disabled disabled:bg-bg-disabled disabled:text-fg-disabled",
       "invalid:border-border-danger focus-within:invalid:border-border",
     ],
@@ -84,8 +85,7 @@ const TextAreaInput = React.forwardRef<HTMLTextAreaElement, TextAreaInputProps>(
     const [inputValue, setInputValue] = useControlledState(
       props.value,
       props.defaultValue ?? "",
-      () => {
-      }
+      () => {}
     );
     const inputRef = React.useRef<HTMLTextAreaElement>(null);
 
@@ -134,17 +134,16 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, ...pr
 });
 Input.displayName = "Input";
 
-interface InputRootProps
-extends Omit<React.HTMLAttributes<HTMLDivElement>, 'prefix'>,
-VariantProps<typeof inputStyles> {
-asChild?: boolean;
-isLoading?: boolean;
-loaderPosition?: "prefix" | "suffix";
-children?: React.ReactNode;
-suffix?: React.ReactNode;
-href?: string;
-target?: string;
-prefix?: React.ReactNode;
+interface InputRootProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'prefix'>, VariantProps<typeof inputStyles> {
+  asChild?: boolean;
+  isLoading?: boolean;
+  loaderPosition?: "prefix" | "suffix";
+  children?: React.ReactNode;
+  suffix?: React.ReactNode;
+  href?: string;
+  target?: string;
+  prefix?: React.ReactNode;
+  size?: "sm" | "md" | "lg";
 }
 
 const InputRoot = ({
@@ -158,6 +157,15 @@ const InputRoot = ({
   ...props
 }: InputRootProps) => {
   const { root } = inputStyles({ size, multiline });
+  const inputContext = useSlottedContext(AriaInputContext);
+  const textAreaContext = useSlottedContext(AriaTextAreaContext);
+  const inputRef = React.useRef(null);
+  const isDisabled = props.isDisabled || inputContext?.disabled || textAreaContext?.disabled;
+  const isInvalid =
+    props.isInvalid ||
+    (!!inputContext?.["aria-invalid"] && inputContext["aria-invalid"] !== "false") ||
+    (!!textAreaContext?.["aria-invalid"] && textAreaContext["aria-invalid"] !== "false");
+
   const inputRef = React.useRef(null);
 
   const handlePointerDown = (event: React.PointerEvent<HTMLElement>) => {
@@ -172,9 +180,10 @@ const InputRoot = ({
 
   return (
     <div
-      role="presentation"
       {...props}
       onPointerDown={handlePointerDown}
+      isDisabled={isDisabled}
+      isInvalid={isInvalid}
       className={root({ className })}
     >
       <InputContext.Provider value={{ ref: inputRef }}>

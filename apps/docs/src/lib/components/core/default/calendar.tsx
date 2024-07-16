@@ -21,7 +21,7 @@ import {
 } from "react-aria-components";
 import { tv } from "tailwind-variants";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/lib/icons";
-import { Button, buttonStyles } from "./react/button";
+import { Button, buttonStyles } from "./react/buttons/button";
 import { Heading } from "./heading";
 import { Text } from "./text";
 

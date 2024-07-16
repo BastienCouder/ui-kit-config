@@ -14,7 +14,7 @@ import { fieldStyles } from "./field";
 import { Field, type FieldProps } from "./field";
 import { InputRoot, type inputStyles } from "./input";
 import { RangeCalendar } from "./range-calendar";
-import { Button } from "./react/button";
+import { Button } from "./react/buttons/button";
 
 interface DateRangePickerProps<T extends DateValue>
   extends DateRangePickerRootProps<T>,

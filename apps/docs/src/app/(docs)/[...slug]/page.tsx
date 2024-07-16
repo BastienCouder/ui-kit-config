@@ -5,7 +5,7 @@ import { ExternalLinkIcon } from "lucide-react";
 import { TableOfContents } from "@/components/docs/toc";
 import { Mdx } from "@/components/mdx/mdx-remote";
 import { Breadcrumbs, Breadcrumb } from "@/lib/components/core/default/breadcrumbs";
-import { Button } from "@/lib/components/core/default/react/button";
+import { Button } from "@/lib/components/core/default/react/buttons/button";
 import { ScrollArea } from "@/lib/components/core/default/scroll-area";
 import { cn } from "@/lib/utils";
 import { getDocFromSlug, getDocs } from "@/server/docs";

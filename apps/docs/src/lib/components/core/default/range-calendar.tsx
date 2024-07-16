@@ -10,7 +10,7 @@ import {
   useSlottedContext,
 } from "react-aria-components";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/lib/icons";
-import { Button } from "./react/button";
+import { Button } from "./react/buttons/button";
 import {
   CalendarHeader,
   CalendarGrid,

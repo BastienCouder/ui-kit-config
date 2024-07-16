@@ -15,7 +15,7 @@ import { tv } from "tailwind-variants";
 import { useMediaQuery } from "@/lib/hooks/use-media-query";
 import { XIcon } from "@/lib/icons";
 import { cn } from "@/lib/utils";
-import { Button, type ButtonProps } from "./react/button";
+import { Button, type ButtonProps } from "./react/buttons/button";
 import { MotionDrawerRoot, useMotionDrawer } from "./use-motion-drawer";
 
 type OverlayType = "modal" | "drawer" | "popover";

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { EditIcon, Trash2Icon } from "lucide-react";
-import { Button } from "@/lib/components/core/default/react/button";
+import { Button } from "@/lib/components/core/default/react/buttons/button";
 import { Input } from "@/lib/components/core/default/input";
 import { useList } from "@/lib/hooks/use-list";
 

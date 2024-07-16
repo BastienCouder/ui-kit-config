@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Button } from "@/lib/components/core/default/react/button";
+import { Button } from "@/lib/components/core/default/react/buttons/button";
 import { TextArea } from "@/lib/components/core/default/text-area";
 import { ClientOnly } from "@/lib/components/utils/client-only";
 import { useLocalStorage } from "@/lib/hooks/use-local-storage";

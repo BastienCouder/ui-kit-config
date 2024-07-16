@@ -4,7 +4,7 @@ import React from "react";
 import { CheckIcon, CopyIcon } from "lucide-react";
 import type { Key } from "react-aria-components";
 import { tv } from "tailwind-variants";
-import { Button, type ButtonProps } from "@/lib/components/core/default/react/button";
+import { Button, type ButtonProps } from "@/lib/components/core/default/react/buttons/button";
 import { ScrollArea, type ScrollAreaProps } from "@/lib/components/core/default/scroll-area";
 import { Tab, Tabs, TabList, TabPanel, type TabsProps } from "@/lib/components/core/default/tabs";
 import { cn } from "@/lib/utils";

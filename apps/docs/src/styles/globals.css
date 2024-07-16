@@ -18,16 +18,16 @@
     --color-neutral-900: 0 0% 16%; /* Heading Text */
     --color-neutral-1000: 0 0% 12%;
 
-    --color-primary-100: 189, 100%, 98%;
-    --color-primary-200: 189, 100%, 92%;
-    --color-primary-300: 189, 100%, 86%;
-    --color-primary-400: 189, 100%, 80%;
-    --color-primary-500: 189, 100%, 78%;
-    --color-primary-600: 189, 100%, 72%;
-    --color-primary-700: 189, 100%, 66%;
-    --color-primary-800: 189, 100%, 60%;
-    --color-primary-900: 189, 100%, 54%;
-    --color-primary-1000: 189, 100%, 50%;
+    --color-primary-100: 0 0% 87%;
+    --color-primary-200: 0 0% 79%;
+    --color-primary-300: 0 0% 73%;
+    --color-primary-400: 0 0% 65%;
+    --color-primary-500: 0 0% 54%;
+    --color-primary-600: 0 0% 42%;
+    --color-primary-700: 0 0% 35%;
+    --color-primary-800: 0 0% 28%;
+    --color-primary-900: 0 0% 16%;
+    --color-primary-1000: 0 0% 12%;
 
     --color-secondary-100: 0 0% 87%;
     --color-secondary-200: 0 0% 79%;
@@ -97,9 +97,9 @@
     --color-bg-neutral-hover: var(--color-neutral-400);
     --color-bg-neutral-active: var(--color-neutral-500);
 
-    --color-bg-primary: var(--color-primary-1000);
-    --color-bg-primary-hover: var(--color-primary-900);
-    --color-bg-primary-active: var(--color-primary-800);
+    --color-bg-primary: var(--color-neutral-1000);
+    --color-bg-primary-hover: var(--color-neutral-900);
+    --color-bg-primary-active: var(--color-neutral-800);
 
     --color-bg-secondary: var(--color-secondary-1000);
     --color-bg-secondary-hover: var(--color-secondary-900);

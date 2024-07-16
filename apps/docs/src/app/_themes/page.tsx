@@ -22,7 +22,7 @@ import { usePalette } from "@/hooks/use-palette";
 import { ColorPicker } from "@/lib/components/core/default/color-picker";
 import { Dialog, DialogRoot } from "@/lib/components/core/default/dialog";
 import { NumberField } from "@/lib/components/core/default/number-field";
-import { Button } from "@/lib/components/core/default/react/button";
+import { Button } from "@/lib/components/core/default/react/buttons/button";
 import { Slider } from "@/lib/components/core/default/slider";
 import { Switch } from "@/lib/components/core/default/switch";
 import { TextField } from "@/lib/components/core/default/text-field";

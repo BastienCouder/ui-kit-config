@@ -14,7 +14,7 @@ import { Dialog } from "./dialog";
 import { fieldStyles } from "./field";
 import { Field, type FieldProps } from "./field";
 import { InputRoot, type inputStyles } from "./input";
-import { Button } from "./react/button";
+import { Button } from "./react/buttons/button";
 
 interface DatePickerProps<T extends DateValue>
   extends DatePickerRootProps<T>,
