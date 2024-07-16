@@ -5,6 +5,7 @@ export interface Item {
   external?: boolean;
   label?: string;
   items?: Item[];
+  icon?: JSX.Element;
 }
 
 export interface SubCategory {
@@ -16,6 +17,7 @@ export interface Category {
   title: string;
   slug: string;
   items: (Item | SubCategory)[];
+  icon?: JSX.Element;
 }
 
 export type DocsNav = Category[];

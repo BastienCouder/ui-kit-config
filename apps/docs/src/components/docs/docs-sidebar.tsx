@@ -74,7 +74,7 @@ const Category = ({ title, slug, items, pathname }: CategoryProps) => {
                             <CollapsibleTrigger className="flex items-center space-x-2 [&[data-state=open]>svg]:rotate-90">
                               <ChevronRightIcon className="h-4 w-4 shrink-0 transition-transform duration-200" />
                               <span className="block duration-100 group-hover:translate-x-0.5">
-                                {item.title}
+                                {item.title} {item.icon}
                               </span>
                             </CollapsibleTrigger>
                           </div>
@@ -92,6 +92,7 @@ const Category = ({ title, slug, items, pathname }: CategoryProps) => {
                                           "border-muted block cursor-not-allowed border-l py-1 pl-4 text-fg-disabled"
                                         )}
                                       >
+                                       
                                         {subItem.title}
                                         {subItem.label && (
                                           <span className="ml-2 rounded-md bg-bg-disabled px-1.5 py-0.5 text-xs leading-none text-fg-disabled">

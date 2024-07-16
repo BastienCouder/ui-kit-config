@@ -30,11 +30,13 @@ export interface DocFrontmatter {
   keywords?: string[];
   links?: DocLink[];
   label?: string;
+  icon?: JSX.Element;
 }
 
 export interface DocMetadata {
   title: string;
   type: DocType;
+  icon?: JSX.Element;
   href: string;
   breadcrumbs: { label: string; href: string }[];
   description?: string;

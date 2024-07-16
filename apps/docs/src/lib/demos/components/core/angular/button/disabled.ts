@@ -5,7 +5,7 @@ import { HlmButtonModule } from '@/lib/components/core/default/angular/button/hl
   selector: 'button-preview',
   standalone: true,
   imports: [HlmButtonModule],
-  template: `<Button hlmBtn>Button</Button>`,
+  template: `<Button hlmBtn [isDisabled]="true" >Button</Button>`,
 })
 
 export class ButtonPreviewComponent {

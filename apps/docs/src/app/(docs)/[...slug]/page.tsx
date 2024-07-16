@@ -63,6 +63,7 @@ export default async function Page({ params }: PageProps) {
           </Breadcrumbs>
         )}
         <h1 className="text-4xl font-bold">{metadata.title}</h1>
+        <p>{metadata.icon}</p>
         <p className="mt-2 text-fg-muted">{metadata.description}</p>
         {metadata.links && metadata.links.length > 0 && (
           <div className="mt-4 flex flex-wrap gap-2">

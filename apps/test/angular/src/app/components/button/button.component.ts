@@ -78,6 +78,8 @@ import {
 	@Input() href?: string;
 	@Input() target?: string;
   
+
+	private defaultVariant: ButtonVariants['variant'] = 'default';
 	private prefixComponentRef?: ComponentRef<any>;
 	private suffixComponentRef?: ComponentRef<any>;
 	private loaderComponentRef?: ComponentRef<any>;
@@ -89,6 +91,7 @@ import {
 	  private vcr: ViewContainerRef
 	) {
 	  this.originalElement = el.nativeElement;
+	  this.variant = this.defaultVariant;
 	}
   
 	ngOnChanges(changes: SimpleChanges): void {
@@ -114,13 +117,14 @@ import {
 	}
   
 	private updateClasses(): void {
-	  const buttonClasses = cn(
-		buttonVariants({ variant: this.variant, size: this.size, shape: this.shape }),
-		{ 'cursor-default bg-bg-disabled text-fg-disabled': this.isDisabled || this.isLoading }
-	  );
-  
-	  this.renderer.setAttribute(this.originalElement, 'class', buttonClasses);
-	}
+		const buttonClasses = cn(
+		  buttonVariants({ variant: this.variant, size: this.size, shape: this.shape }),
+		  { 'cursor-default bg-bg-disabled text-fg-disabled': this.isDisabled || this.isLoading }
+		);
+	  
+		this.renderer.setAttribute(this.originalElement, 'class', buttonClasses);
+	  }
+	  
   
 	private updateContent(): void {
 	  const button = this.originalElement;

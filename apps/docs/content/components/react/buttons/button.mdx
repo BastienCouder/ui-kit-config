@@ -21,7 +21,7 @@ thumbnail:
 npx @shadcnui add button
 ```
 
-  <Step>Or Copy and paste the following code into your project.</Step>
+  <Step>Or copy and paste the following code into your project.</Step>
   <ComponentSource name={["components/core/default/react/button"]} extension={["tsx"]} />
   <Step>Update the import paths to match your project setup.</Step>
 </Steps>
@@ -110,11 +110,12 @@ To use a button as a link, use the `href` prop the button will automatically ren
   preview={`<Button href="/login">Login</Button>`}
 />
 
+
 ## API Reference
 
 | Prop             | Type                                                                                                | Default       | Description                                                                                                 |
-| ---------------- | --------------------------------------------------------------------------------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------- | --- |
-| `variant`        | `"default" \| "primary" \| "quiet" \| "outline" \| "accent" \| "danger" \| "success" \| "warning"`  | `"default"`   | The visual style of the button.                                                                             |
+| ---------------- | --------------------------------------------------------------------------------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------- |
+| `variant`        | `"default" \| "primary" \| "secondary" \| "quiet" \| "outline" \| "accent" \| "danger" \| "success" \| "warning"`  | `"default"`   | The visual style of the button.                                                                             |
 | `size`           | `"sm" \| "md" \| "lg"`                                                                              | `"md"`        | The size of the button.                                                                                     |
 | `shape`          | `"rectangle" \| "square" \| "circle"`                                                               | `"rectangle"` | The visual shape of the button.                                                                             |
 | `prefix`         | `React.ReactNode`                                                                                   | -             | A visual to display before the button text.                                                                 |
@@ -135,7 +136,7 @@ To use a button as a link, use the `href` prop the button will automatically ren
 | `routerOptions`  | `RouterOptions`                                                                                     | -             | Options for the configured client side router.                                                              |
 | `children`       | `ReactNode \| (values: ButtonRenderProps & {defaultChildren: ReactNode \| undefined}) => ReactNode` | -             | The children of the component. A function may be provided to alter the children based on component state.   |
 | `className`      | `string`                                                                                            | -             | The CSS className for the element.                                                                          |
-| `style`          | `CSSProperties \| (values: ButtonRenderProps & {defaultStyle: CSSProperties}) => CSSProperties`     | -             | The inline style for the element. A function may be provided to compute the style based on component state. |     |
+| `style`          | `CSSProperties \| (values: ButtonRenderProps & {defaultStyle: CSSProperties}) => CSSProperties`     | -             | The inline style for the element. A function may be provided to compute the style based on component state. |
 
 | Data attribute         | Description                                                    |
 | ---------------------- | -------------------------------------------------------------- |

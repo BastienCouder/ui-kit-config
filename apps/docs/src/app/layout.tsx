@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: truncateOnWord(config.description, 148, true),
   keywords: config.keywords,
   authors: config.authors,
-  creator: config.creator,
+ /// creator: config.creator,
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     title: config.title,
     description: truncateOnWord(config.description, 148, true),
     siteName: config.name,
-    images: [config.thumbnail],
+  //  images: [config.thumbnail],
   },
   twitter: {
     card: "summary_large_image",
     title: config.title,
     description: truncateOnWord(config.description, 148, true),
-    images: [config.thumbnail],
-    creator: config.twitter.creator,
+    //images: [config.thumbnail],
+    //creator: config.twitter.creator,
   },
   metadataBase: new URL(config.url),
 };

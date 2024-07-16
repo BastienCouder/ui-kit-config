@@ -2,7 +2,7 @@ import { Button } from "@/lib/components/core/default/react/button";
 
 const variants = [
   "default",
-  "secondary",
+  "primary",
   "outline",
   "quiet",
   "success",

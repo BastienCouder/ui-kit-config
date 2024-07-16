@@ -3,7 +3,7 @@ import Button from '@/lib/components/core/default/vue/button.vue';
 
 const variants = [
   "default",
-  "secondary",
+  "primary",
   "outline",
   "quiet",
   "success",

@@ -1,6 +1,6 @@
 export const siteConfig = {
   global: {
-    url: "https://dotui.org",
+    url: "https://bastiencouder.com",
     name: "UiKit",
     logo: "/images/logo.png",
     title: "dotUI",
@@ -8,20 +8,20 @@ export const siteConfig = {
     keywords: [],
     authors: [
       {
-        name: "mehdibha",
-        url: "https://www.mehdibha.com",
+        name: "bastiencouder",
+        url: "https://www.bastiencouder.com",
       },
     ],
-    creator: "mehdibha",
-    thumbnail: "/images/thumbnail.png",
-    twitter: {
-      creator: "@mehdibha_",
-    },
+   // creator: "bastiencouder",
+   // thumbnail: "/images/thumbnail.png",
+   // twitter: {
+   //   creator: "@mehdibha_",
+   // },
   },
   links: {
-    github: "https://github.com/mehdibha/dotui",
-    twitter: "https://x.com/mehdibha_",
-    discord: "https://discord.gg/DXpj5V2fU8",
+    github: "https://github.com/BastienCouder",
+ //   twitter: "https://x.com/mehdibha_",
+   // discord: "https://discord.gg/DXpj5V2fU8",
   },
   header: {
     nav: {

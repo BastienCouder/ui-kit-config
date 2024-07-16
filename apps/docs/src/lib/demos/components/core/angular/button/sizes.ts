@@ -5,7 +5,13 @@ import { HlmButtonModule } from '@/lib/components/core/default/angular/button/hl
   selector: 'button-preview',
   standalone: true,
   imports: [HlmButtonModule],
-  template: `<Button hlmBtn>Button</Button>`,
+  template: `
+    <div className="flex w-full items-center justify-center gap-4">
+      <Button hlmBtn [size]="'sm'">Button</Button>
+      <Button hlmBtn [size]="'md'">Button</Button>
+      <Button hlmBtn [size]="'lg'">Button</Button>
+    </div>
+  `,
 })
 
 export class ButtonPreviewComponent {

@@ -16,7 +16,7 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\"",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "@adobe/leonardo-contrast-colors": "^1.0.0",

@@ -18,10 +18,10 @@ thumbnail:
   <Step>Install the following dependencies:</Step>
 
 ```bash
-npm install react-aria-components
+npx @shadcnui add button
 ```
 
-  <Step>Copy and paste the following code into your project.</Step>
+  <Step>Or copy and paste the following code into your project.</Step>
   <ComponentSource name={["components/core/default/vue/button"]} extension={["vue"]} />
   <Step>Update the import paths to match your project setup.</Step>
 </Steps>
@@ -121,7 +121,7 @@ To use a button as a link, use the `href` prop the button will automatically ren
 
 | Prop             | Type                                                                                                | Default       | Description                                                                                                 |
 | ---------------- | --------------------------------------------------------------------------------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------- |
-| `variant`        | `"default" \| "primary" \| "quiet" \| "outline" \| "accent" \| "danger" \| "success" \| "warning"`  | `"default"`   | The visual style of the button.                                                                             |
+| `variant`        | `"default" \| "primary" \| "secondary" \| "quiet" \| "outline" \| "accent" \| "danger" \| "success" \| "warning"`  | `"default"`   | The visual style of the button.                                                                             |
 | `size`           | `"sm" \| "md" \| "lg"`                                                                              | `"md"`        | The size of the button.                                                                                     |
 | `shape`          | `"rectangle" \| "square" \| "circle"`                                                               | `"rectangle"` | The visual shape of the button.                                                                             |
 | `prefix`         | `React.ReactNode`                                                                                   | -             | A visual to display before the button text.                                                                 |

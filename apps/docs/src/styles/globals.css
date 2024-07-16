@@ -159,6 +159,7 @@
     --color-fg-onAccent: var(--color-neutral-1000);
     --color-fg-onNeutral: var(--color-neutral-1000);
     --color-fg-onPrimary: var(--color-neutral-100);
+    --color-fg-onSecondary: var(--color-neutral-100);
     --color-fg-onSuccess: var(--color-neutral-1000);
     --color-fg-onMutedSuccess: var(--color-neutral-1000);
     --color-fg-onDanger: var(--color-neutral-1000);

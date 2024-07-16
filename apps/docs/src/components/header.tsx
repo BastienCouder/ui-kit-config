@@ -98,7 +98,7 @@ export const Header = () => {
             >
               <GitHubIcon />
             </Button>
-            <ThemeToggle />
+             {/*  <ThemeToggle />*/}
           </div>
         </div>
         {/* Mobile nav */}
@@ -124,9 +124,9 @@ export const Header = () => {
               beta
             </Badge>
           </Link>
-          <SearchDocs className="flex-1" size="sm">
+                    {/* <SearchDocs className="flex-1" size="sm">
             <span className="mr-4 flex-1 text-left">Search...</span>
-          </SearchDocs>
+          </SearchDocs>*/}
           <DialogRoot>
             <Button variant="quiet" size="sm" shape="square" aria-label="Open menu">
               <MenuIcon />

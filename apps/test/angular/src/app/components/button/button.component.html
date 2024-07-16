@@ -1,0 +1,9 @@
+<button hlmBtn>Click me</button>
+<div class="grid grid-cols-4 gap-2">
+    <div *ngFor="let variant of variants">
+      <button hlmBtn >
+        {{ variant }}
+      </button>
+    </div> 
+  </div>
+  <p *ngFor="let user of users">{{user.name}} : {{user.age}}</p>

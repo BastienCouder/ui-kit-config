@@ -13,8 +13,10 @@ const buttonStyles = tv(
       variant: {
         default:
           "bg-bg-neutral hover:bg-bg-neutral-hover pressed:bg-bg-neutral-active text-fg-onNeutral",
-        secondary:
+        primary:
           "bg-bg-primary hover:bg-bg-primary-hover pressed:bg-bg-primary-active text-fg-onPrimary",
+        secondary:
+          "bg-bg-secondary hover:bg-bg-secondary-hover pressed:bg-bg-secondary-active text-fg-onSecondary",
         quiet:
           "bg-transparent hover:bg-bg-inverse/10 pressed:bg-bg-inverse/20 text-fg",
         outline:

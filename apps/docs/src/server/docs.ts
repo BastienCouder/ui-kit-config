@@ -4,7 +4,6 @@ import { getDocTypeFromSlug } from "@/utils/docs";
 import type { Doc, DocCategory, DocFrontmatter, DocMetadata, DocType } from "@/types/docs";
 import { getTableOfContents } from "../utils/toc";
 import { getAllMdxFiles, parseMDXFile } from "./mdx";
-import { LogIn } from "react-feather";
 
 const getBreadcrumbs = (slug: string[]): { label: string; href: string }[] => {
   const result = slug.map((slugPart, index) => {
@@ -77,6 +76,7 @@ export const getDocFromSlug = async (slug: string[]): Promise<Doc | null> => {
         metadata: {
           title: frontmatter.title,
           description: frontmatter.description,
+          icon: frontmatter.icon,
           href: "",
           type,
           breadcrumbs,
@@ -104,6 +104,7 @@ export const getDocFromSlug = async (slug: string[]): Promise<Doc | null> => {
       metadata: {
         title: frontmatter.title,
         description: frontmatter.description,
+        icon: frontmatter.icon,
         href: "",
         type,
         breadcrumbs,

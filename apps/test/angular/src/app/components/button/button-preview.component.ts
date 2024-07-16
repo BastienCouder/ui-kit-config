@@ -1,22 +1,23 @@
 import { Component } from '@angular/core';
 import { HlmButtonModule } from './hlm-button.module';
-import {  LoaderIconComponent } from '../../lib/icon/icons';
 
 @Component({
-  selector: 'button-preview',
-  standalone: true,
+  selector: 'app-button-preview',
+  template: `<p *ngFor="let user of users">{{user.name}} : {{user.age}}</p>`,
   imports: [HlmButtonModule],
-  template: `<Button
-  hlmBtn
-  [variant]="'outline'"
-  [size]="'md'"
-  [shape]="'rectangle'"
-  [isLoading]="true"
-  >
-  Submit
-</Button>`,
+  standalone: true
 })
 export class ButtonPreviewComponent {
-  LoaderIconComponent = LoaderIconComponent;
   isFormValid = false;
+  variants = [
+    "default",
+    "secondary",
+    "outline",
+    "quiet",
+    "success",
+    "warning",
+    "danger",
+    "accent",
+  ] as const;
+
 }

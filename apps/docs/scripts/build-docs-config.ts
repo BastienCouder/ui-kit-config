@@ -30,7 +30,7 @@ const generateNavItems = (basePath: string, relativePath = ""): (Item | SubCateg
         const title = path.basename(entry, ".mdx");
         items.push({
           title: title.charAt(0).toUpperCase() + title.slice(1).replace(/-/g, " "),
-          href: "/components" + path.join("/", relativePath, title).replace(/\\/g, "/"), // Ensure URLs use forward slashes
+          href: "/components" + path.join("/", relativePath, title).replace(/\\/g, "/"), 
         });
       }
     });
