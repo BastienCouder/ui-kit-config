@@ -5,7 +5,7 @@ export const getDocTypeFromSlug = (slug?: string | string[]): DocType => {
   if (!slug) return undefined;
   if (Array.isArray(slug)) {
     return removeLastS(slug[0]) as DocType;
-  }
+  }  
   return removeLastS(slug.split("/")[0]) as DocType;
 };
 

@@ -8,6 +8,7 @@ import { JosephinFont, fontDisplay, geistMono, geistSans } from "@/styles/fonts"
 import "@/styles/globals.css";
 import { siteConfig } from "@/config";
 import { Providers } from "./providers";
+import { Toaster } from "@/lib/components/core/default/react/overlay/toaster";
 
 const config = siteConfig.global;
 
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Analytics />
         <Providers>
           <Header />
+          <Toaster />
           <main>{children}</main>
           {/* <Footer /> */}
           {/* <LayoutColumnsGrid /> */}

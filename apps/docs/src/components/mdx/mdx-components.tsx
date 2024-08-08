@@ -58,12 +58,12 @@ export const components: React.ComponentPropsWithoutRef<typeof MDXRemote>["compo
   h1: createHeading(1, "font-heading mt-2 scroll-m-20 text-4xl font-bold"),
   h2: createHeading(
     2,
-    "font-heading mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0"
+    "text-primary font-heading mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0"
   ),
-  h3: createHeading(3, "font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"),
-  h4: createHeading(4, "font-heading mt-8 scroll-m-20 text-lg font-semibold tracking-tight"),
-  h5: createHeading(5, "mt-8 scroll-m-20 text-lg font-semibold tracking-tight"),
-  h6: createHeading(6, "mt-8 scroll-m-20 text-base font-semibold tracking-tight"),
+  h3: createHeading(3, "text-primary  font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"),
+  h4: createHeading(4, "text-primary font-heading mt-8 scroll-m-20 text-lg font-semibold tracking-tight"),
+  h5: createHeading(5, "text-primary mt-8 scroll-m-20 text-lg font-semibold tracking-tight"),
+  h6: createHeading(6, "text-primary mt-8 scroll-m-20 text-base font-semibold tracking-tight"),
   a: Link,
   p: ({ className, ...props }) => (
     <p className={cn("text-base leading-7 [&:not(:first-child)]:mt-4", className)} {...props} />
@@ -92,7 +92,7 @@ export const components: React.ComponentPropsWithoutRef<typeof MDXRemote>["compo
   Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
     <h3
       className={cn(
-        "font-heading mt-8 scroll-m-20 text-base font-semibold tracking-tight",
+        "font-heading mt-8 scroll-m-20 text-base font-semibold tracking-tight before:text-secondary",
         className
       )}
       {...props}
@@ -106,7 +106,7 @@ export const components: React.ComponentPropsWithoutRef<typeof MDXRemote>["compo
       <table className={cn("w-full", className)} {...props} />
     </div>
   ),
-  thead: ({ className, ...props }) => <thead className={cn("bg-bg-muted", className)} {...props} />,
+  thead: ({ className, ...props }) => <thead className={cn("bg-muted", className)} {...props} />,
   tr: ({ className, ...props }) => (
     <tr className={cn("m-0 border-t p-0 text-sm", className)} {...props} />
   ),
@@ -141,7 +141,7 @@ export const components: React.ComponentPropsWithoutRef<typeof MDXRemote>["compo
   ),
   ColorBadge: ({ className, children, ...props }: React.ComponentProps<"div">) => (
     <div
-      className="inline-flex items-center space-x-1.5 rounded border bg-bg-muted px-2 py-0.5 font-mono text-sm"
+      className="inline-flex items-center space-x-1.5 rounded border bg-muted px-2 py-0.5 font-mono text-sm"
       {...props}
     >
       <div className={cn("h-3.5 w-3.5 rounded-full border", className)} />

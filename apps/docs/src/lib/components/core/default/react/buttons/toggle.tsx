@@ -14,9 +14,9 @@ const toggleStyles = tv({
       accent: "border border-border-field bg-transparent hover:bg-bg-inverse/10 pressed:bg-bg-inverse/20 pressed:border-transparent text-fg data-[state=on]:bg-bg-accent data-[state=on]:border-transparent data-[state=on]:hover:bg-bg-accent-hover data-[state=on]:pressed:bg-bg-accent-active data-[state=on]:text-fg-onAccent",
     },
     size: {
-      sm: "size-8 [&_svg]:size-4",
-      md: "size-9 [&_svg]:size-4",
-      lg: "size-10 [&_svg]:size-5",
+      sm: "p-1.5 size-8 [&_svg]:w-4 [&_svg]:h-4",
+      md: "p-2 size-9 [&_svg]:w-4 [&_svg]:h-4",
+      lg: "p-4 size-10 [&_svg]:w-5 [&_svg]:h-5",
     },
     shape: {
       rectangle: "",

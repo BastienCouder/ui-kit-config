@@ -55,7 +55,7 @@ export const ComponentPreview = ({
     <div className={cn("overflow-hidden rounded-md border", containerClassName)}>
       <div className="relative">
         <ScrollArea
-          className={cn("flex items-center justify-center bg-white dark:bg-black", {
+          className={cn("flex items-center justify-center bg-card", {
             "max-h-[800px]": aspect === "default",
           })}
         >

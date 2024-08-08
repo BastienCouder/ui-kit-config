@@ -11,10 +11,10 @@ import { cn } from "@/lib/utils";
 
 const codeBlockStyles = tv({
   slots: {
-    root: "block border rounded-md w-fit max-w-full bg-bg-muted",
+    root: "block border rounded-md w-fit max-w-full bg-bg",
     header: "flex items-center justify-between border-b rounded-t-[inherit] pr-2 h-10",
-    body: "text-xs p-4",
-    code: "text-xs",
+    body: "text-[0.8rem] p-4",
+    code: "text-[0.8rem]",
   },
 });
 
@@ -77,7 +77,7 @@ const CodeBlockClient = ({
           />
         </div>
       </CodeBlockHeader>
-      <CodeBlockBody className={cn(isExpanded ? "max-h-[400px]" : "max-h-[200px]")}>
+      <CodeBlockBody className={cn(isExpanded ? "max-h-[700px]" : "max-h-[300px]")}>
         {preview && !isExpanded ? (
           <TabPanel id={files[0].fileName} className="!mt-0">
             {preview}
@@ -128,7 +128,7 @@ const CodeBlockCopyButton = ({ code, ...props }: CodeBlockCopyButtonProps) => {
       shape="square"
       variant="default"
       onClick={handleCopy}
-      className="size-7 [&_svg]:size-3"
+      className="h-7 w-7 [&_svg]:w-4 [&_svg]:h-4"
       {...props}
     >
       {copied ? (

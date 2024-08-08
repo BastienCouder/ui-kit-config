@@ -22,9 +22,9 @@ const toggleButtonStyles = tv({
         "border border-border-field bg-transparent hover:bg-bg-inverse/10 pressed:bg-bg-inverse/20 pressed:border-transparent text-fg selected:bg-bg-accent selected:border-transparent selected:hover:bg-bg-accent-hover selected:pressed:bg-bg-accent-active selected:text-fg-onAccent",
     },
     size: {
-      sm: "size-8 [&_svg]:size-4",
-      md: "size-9 [&_svg]:size-4",
-      lg: "size-10 [&_svg]:size-5",
+      sm: "size-8 [&_svg]:w-4 [&_svg]:h-4",
+      md: "size-9 [&_svg]:w-4 [&_svg]:h-4",
+      lg: "size-10 [&_svg]:w-5 [&_svg]:h-5",
     },
     shape: {
       rectangle: "",

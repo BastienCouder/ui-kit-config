@@ -31,6 +31,7 @@ export interface DocFrontmatter {
   links?: DocLink[];
   label?: string;
   icon?: JSX.Element;
+  color?:"react" | "vue" | "angular";
 }
 
 export interface DocMetadata {
@@ -45,6 +46,7 @@ export interface DocMetadata {
   links?: DocLink[];
   label?: string;
   disabled?: boolean;
+  color?: "react" | "vue" | "angular";
 }
 
 export interface Doc {

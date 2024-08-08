@@ -19,7 +19,7 @@ export const DocCard = ({ doc, className }: { doc: DocMetadata; className?: stri
       href={doc.href}
       target={doc.href.startsWith("/") ? undefined : "_blank"}
       className={cn(
-        "group flex cursor-pointer flex-col overflow-hidden rounded-md border border-border/20 bg-bg-muted/70 transition-colors duration-150 hover:border-border hover:bg-bg-muted",
+        "group flex cursor-pointer flex-col overflow-hidden rounded-md border border-border/20 bg-bg/70 transition-colors duration-150 hover:border-border hover:bg-bg",
         className
       )}
     >
@@ -85,7 +85,7 @@ const Thumbnail = ({
   if (thumbnail?.video) {
     return (
       <div ref={ref}>
-        <AspectRatio ratio={16 / 9} asChild className="w-full bg-bg-muted">
+        <AspectRatio ratio={16 / 9} asChild className="w-full bg-bg">
           {debouncedInView && isInView ? (
             <video
               src={thumbnail.video}
@@ -113,7 +113,7 @@ const Thumbnail = ({
   }
 
   return (
-    <div className="aspect-video w-full bg-bg-muted">
+    <div className="aspect-video w-full bg-bg">
       <img src={thumbnail.image} alt="Thumbnail" />
     </div>
   );

@@ -14,9 +14,9 @@ import { cn } from "@/lib/utils";
 
 const breadcrumbsStyles = tv({
   slots: {
-    root: "flex flex-wrap items-center gap-1.5 break-words text-sm text-fg-muted [&_svg]:size-4",
+    root: "flex flex-wrap items-center gap-1.5 break-words text-sm [&_svg]:size-4",
     item: "inline-flex items-center gap-1.5 [&_svg]:last:hidden",
-    link: "inline-flex items-center gap-1.5 hover:text-fg transition-colors current:text-fg disabled:[&:not([data-current])]:text-fg-disabled disabled:cursor-default",
+    link: "inline-flex items-center gap-1.5 hover:text-primary transition-colors current:text-primary disabled:[&:not([data-current])]:text-disabled-fg disabled:cursor-default",
   },
 });
 
@@ -34,7 +34,7 @@ const Breadcrumb = ({ children, className, style, icon = null, ...props }: Bread
     <BreadcrumbItem className={className} style={style} {...props}>
       {icon}
       <BreadcrumbLink {...props}>{children}</BreadcrumbLink>
-      <ChevronRightIcon />
+      <ChevronRightIcon className="text-primary" />
     </BreadcrumbItem>
   );
 };

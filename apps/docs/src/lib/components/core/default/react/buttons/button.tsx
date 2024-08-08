@@ -7,31 +7,32 @@ import { cn } from "@/lib/utils";
 
 const buttonStyles = tv(
   {
-    base: "inline-flex gap-2 cursor-pointer items-center justify-center whitespace-nowrap rounded-md leading-normal text-sm shrink-0 font-medium ring-offset-background transition-colors disabled:cursor-default disabled:bg-bg-disabled disabled:text-fg-disabled",
+    base: "inline-flex gap-2 cursor-pointer items-center justify-center whitespace-nowrap rounded-md leading-normal text-sm shrink-0 font-medium ring-offset-background transition-colors disabled:cursor-default disabled:bg-disabled disabled:text-disabled-fg",
     variants: {
       variant: {
         default:
-          "bg-bg-neutral hover:bg-bg-neutral-hover pressed:bg-bg-neutral-active text-fg-onNeutral",
+          "bg-neutral hover:bg-neutral-hover pressed:bg-neutral-active text-neutral-fg",
         primary:
-          "bg-bg-primary hover:bg-bg-primary-hover pressed:bg-bg-primary-active text-fg-onPrimary",
+          "bg-primary hover:bg-primary-hover pressed:bg-primary-active text-primary-fg",
         secondary:
-          "bg-bg-secondary hover:bg-bg-secondary-hover pressed:bg-bg-secondary-active text-fg-onSecondary",
-        quiet: "bg-transparent hover:bg-bg-inverse/10 pressed:bg-bg-inverse/20 text-fg",
+          "bg-secondary hover:bg-secondary-hover pressed:bg-secondary-active text-secondary-fg",
+        quiet: "bg-transparent hover:bg-inverse/10 pressed:bg-inverse/20 text-fg",
         outline:
-          "border border-border-field bg-transparent hover:bg-bg-inverse/10 pressed:bg-bg-inverse/20 text-fg disabled:border-border-disabled disabled:bg-transparent",
+          "border border-border bg-transparent hover:bg-inverse/10 pressed:bg-inverse/20 text-fg disabled:border-disabled disabled:bg-transparent",
         accent:
-          "bg-bg-accent hover:bg-bg-accent-hover pressed:bg-bg-accent-active text-fg-onAccent",
+          "bg-accent hover:bg-accent-hover pressed:bg-accent-active text-accent-fg",
         success:
-          "bg-bg-success hover:bg-bg-success-hover pressed:bg-bg-success-active text-fg-onSuccess",
+          "bg-success hover:bg-success-hover pressed:bg-success-active text-success-fg",
         warning:
-          "bg-bg-warning hover:bg-bg-warning-hover pressed:bg-bg-warning-active text-fg-onWarning",
+          "bg-warning hover:bg-warning-hover pressed:bg-warning-active text-warning-fg",
         danger:
-          "bg-bg-danger hover:bg-bg-danger-hover pressed:bg-bg-danger-active text-fg-onDanger",
+          "bg-danger hover:bg-danger-hover pressed:bg-danger-active text-danger-fg",
       },
       size: {
-        sm: "h-8 px-3 [&_svg]:size-4",
-        md: "h-9 px-4 [&_svg]:size-4",
-        lg: "h-10 px-5 [&_svg]:size-5",
+        sm: "h-8 px-3 [&_svg]:w-4 [&_svg]:h-4",
+        md: "h-9 px-4 [&_svg]:w-4 [&_svg]:h-4",
+        lg: "h-10 px-5 [&_svg]:w-5 [&_svg]:h-5",
+        icon: "h-10 w-10",
       },
       shape: {
         rectangle: "",

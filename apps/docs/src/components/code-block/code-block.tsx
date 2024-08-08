@@ -19,13 +19,13 @@ const CodeBlock = async ({ files: _files, preview: _preview, ...props }: CodeBlo
     const html = await codeToHtml(_preview, {
       lang: props.language || "tsx",
       themes: {
-        light: "github-light",
+        light: "aurora-x",
         dark: "aurora-x",
       },
     });
     preview = (
       <div
-        className="[&_pre]:outline-none [&_span]:!bg-transparent dark:[&_span]:!text-[var(--shiki-dark)]"
+        className="[&_pre]:outline-none [&_span]:!bg-transparent dark:[&_span]:!text-[var(--shiki-light)]"
         dangerouslySetInnerHTML={{ __html: html }}
       />
     );
@@ -36,7 +36,7 @@ const CodeBlock = async ({ files: _files, preview: _preview, ...props }: CodeBlo
       const html = await codeToHtml(code, {
         lang: props.language || lang,
         themes: {
-          light: "light-plus",
+          light: "aurora-x",
           dark: "aurora-x",
         },
       });
@@ -47,7 +47,7 @@ const CodeBlock = async ({ files: _files, preview: _preview, ...props }: CodeBlo
         codeStr: code,
         code: (
           <div
-            className="[&_pre]:outline-none [&_span]:!bg-transparent dark:[&_span]:!text-[var(--shiki-dark)]"
+            className="[&_pre]:outline-none [&_span]:!bg-transparent dark:[&_span]:!text-[var(--shiki-light)]"
             dangerouslySetInnerHTML={{ __html: html }}
           />
         ),

@@ -41,19 +41,41 @@ const getBreadcrumbs = (slug: string[]): { label: string; href: string }[] => {
   return result.filter((elem) => !!elem) as { label: string; href: string }[];
 };
 
-export const getDocFromSlug = async (slug: string[]): Promise<Doc | null> => {
-  // 1st scenario: if it's a directory
+type FrameworkColor = "react" | "vue" | "angular";
+
+const findParentColor = (slug: string[]): FrameworkColor | undefined => {
+  let currentPath = path.join(process.cwd(), "content", ...slug);
+
+  while (slug.length > 0) {
+    const indexPath = path.join(currentPath, "index.mdx");
+    if (fs.existsSync(indexPath)) {
+      const fileRawContent = fs.readFileSync(indexPath, "utf-8");
+      const { frontmatter } = parseMDXFile<DocFrontmatter>(fileRawContent);
+      if (frontmatter.color) {
+        return frontmatter.color;
+      }
+    }
+    slug.pop();
+    currentPath = path.join(process.cwd(), "content", ...slug);
+  }
+
+  return undefined;
+};
+
+export const getDocFromSlug = async (slug: string[], parentColor?: FrameworkColor): Promise<Doc | null> => {
   const breadcrumbs = getBreadcrumbs(slug);
   const type = slug[0] as DocType;
   const directoryPath = path.join(process.cwd(), "content", ...slug);
+
   if (fs.existsSync(directoryPath) && fs.lstatSync(directoryPath).isDirectory()) {
-    // check if index.mdx exists
     const indexPath = path.join(directoryPath, "index.mdx");
     if (fs.existsSync(indexPath)) {
-      // get rawContent & metadata from index.mdx
       const fileRawContent = fs.readFileSync(indexPath, "utf-8");
       const { content, frontmatter } = parseMDXFile<DocFrontmatter>(fileRawContent);
-      // get categories from subfolders
+
+      // Trouver la couleur depuis les parents si elle n'est pas définie dans le frontmatter
+      const color = frontmatter.color as FrameworkColor || parentColor || findParentColor(slug);
+
       const subfolders = fs
         .readdirSync(directoryPath)
         .filter((item) => fs.lstatSync(path.join(directoryPath, item)).isDirectory());
@@ -81,6 +103,7 @@ export const getDocFromSlug = async (slug: string[]): Promise<Doc | null> => {
           type,
           breadcrumbs,
           links: frontmatter.links,
+          color,
         },
         rawContent: content,
         categories,
@@ -89,7 +112,6 @@ export const getDocFromSlug = async (slug: string[]): Promise<Doc | null> => {
     }
   }
 
-  // 2nd scenario: if it's a file
   const filePath = path.join(
     process.cwd(),
     "content",
@@ -99,6 +121,9 @@ export const getDocFromSlug = async (slug: string[]): Promise<Doc | null> => {
   if (fs.existsSync(filePath)) {
     const fileRawContent = fs.readFileSync(filePath, "utf-8");
     const { content, frontmatter } = parseMDXFile<DocFrontmatter>(fileRawContent);
+
+    const color = frontmatter.color as FrameworkColor || parentColor || findParentColor(slug.slice(0, -1));
+
     const toc = await getTableOfContents(content);
     return {
       metadata: {
@@ -109,6 +134,7 @@ export const getDocFromSlug = async (slug: string[]): Promise<Doc | null> => {
         type,
         breadcrumbs,
         links: frontmatter.links,
+        color,
       },
       rawContent: content,
       toc,
@@ -117,7 +143,6 @@ export const getDocFromSlug = async (slug: string[]): Promise<Doc | null> => {
 
   return null;
 };
-
 // getDocs() returns all docs from content folder
 // getDocs("hooks") returns all docs from content/hooks folder
 // getDocs("components/core") returns all docs from content/components/core folder

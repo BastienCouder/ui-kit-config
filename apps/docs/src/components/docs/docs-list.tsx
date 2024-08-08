@@ -14,8 +14,6 @@ export interface DocsListProps {
 
 export const DocsList = ({ name, href, limit, className, cardClassName }: DocsListProps) => {
   const docs = getDocs(name);
-
-
   const type = getDocTypeFromSlug(name);
   const hasMore = limit ? docs.length > limit : false;
 

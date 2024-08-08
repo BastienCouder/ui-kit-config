@@ -52,7 +52,7 @@ export const SearchDocs = (props: ButtonProps) => {
         variant="outline"
         prefix={<SearchIcon />}
         suffix={
-          <span className="hidden rounded-md bg-bg-muted px-1 py-0.5 text-xs md:inline">
+          <span className="hidden rounded-md bg-muted px-1 py-0.5 text-xs md:inline">
             Ctrl K
           </span>
         }

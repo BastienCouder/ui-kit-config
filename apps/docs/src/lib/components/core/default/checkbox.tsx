@@ -57,9 +57,9 @@ const Checkbox = React.forwardRef<React.ElementRef<typeof AriaCheckbox>, Checkbo
           <>
             <div className={indicator({ className: "" })}>
               {isIndeterminate ? (
-                <MinusIcon className="size-2.5" />
+                <MinusIcon className="w-2.5 h-3.5" />
               ) : (
-                <CheckIcon className="size-3" />
+                <CheckIcon className="w-3 h-3" />
               )}
             </div>
             <span>{children}</span>

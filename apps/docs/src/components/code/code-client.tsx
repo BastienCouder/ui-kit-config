@@ -7,7 +7,7 @@ import { Button } from "@/lib/components/core/default/react/buttons/button";
 import { ScrollArea } from "@/lib/components/core/default/scroll-area";
 
 const codeStyles = tv({
-  base: "relative rounded-md bg-bg-muted",
+  base: "relative rounded-md bg-bg border border-secondary",
   variants: {
     variant: {
       classic: "text-xs p-4",
@@ -43,7 +43,7 @@ const CodeClient = ({ className, inline = false, children, code }: CodeClientPro
             variant="quiet"
             shape="square"
             size="sm"
-            className="absolute right-2 top-2 [&_svg]:size-3"
+            className="absolute right-2 top-2 [&_svg]:w-3 [&_svg]:h-3"
             onClick={handleCopy}
           >
             {copied ? (

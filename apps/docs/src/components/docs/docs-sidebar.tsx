@@ -65,7 +65,7 @@ const Category = ({ title, slug, items, pathname }: CategoryProps) => {
                         {"href" in item && item.href && (
                           <div
                             className={cn(
-                              "border-bg-bg-muted hover:text-foreground group ml-2 flex items-center gap-2 border-l pl-4 text-fg-muted transition-colors",
+                              "border-bg-muted hover:text-foreground group ml-2 flex items-center gap-2 border-l pl-4 text-fg-muted transition-colors",
                               {
                                 "border-border font-medium text-fg": pathname === item.href,
                               }
@@ -167,7 +167,7 @@ const Category = ({ title, slug, items, pathname }: CategoryProps) => {
                       <Link
                         href={item.href}
                         className={cn(
-                          "border-bg-bg-muted hover:text-foreground group ml-2 block border-l pl-4 text-fg-muted transition-colors",
+                          "border-bg-muted hover:text-foreground group ml-2 block border-l pl-4 text-fg-muted transition-colors",
                           {
                             "border-border font-medium text-fg": pathname === item.href,
                           }
